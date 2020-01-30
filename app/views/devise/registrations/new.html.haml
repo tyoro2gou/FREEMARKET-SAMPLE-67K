@@ -1,0 +1,26 @@
+.wrapper-signinup
+  %p.iwasaki
+    Hi! Ms.Iwasaki.
+  = form_with(model: @user, url: user_registration_path, class: 'form', local: true) do |f|
+    -# = devise_error_messages!
+    .field
+      .field-label
+        = f.label :name, "user name"
+      .field-input
+        = f.text_field :name, autofocus: false
+    .field
+      .field-label
+        = f.label :email, "email"
+      .field-input
+        = f.email_field :email
+    .field
+      .field-label
+        = f.label :password, "password"
+      .field-input
+        = f.password_field :password, autocomplete: "off"
+    .field
+      .field-label
+        = f.label :password_confirmation, "password confirmation"
+      .field-input
+        = f.password_field :password_confirmation, autocomplete: "off"
+    = f.submit "sign up", class: 'btn signup-btn'

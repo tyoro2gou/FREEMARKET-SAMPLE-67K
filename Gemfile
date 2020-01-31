@@ -83,3 +83,6 @@ gem 'mini_magick'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+# 画像をアップロードする際、外部のストレージを選択しアップロードするのを補助してくれるGem。AWSに最適化。
+gem 'fog-aws'

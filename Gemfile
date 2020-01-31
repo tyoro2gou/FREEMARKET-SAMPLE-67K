@@ -73,3 +73,8 @@ gem "font-awesome-sass"
 # 画像投稿するため
 gem 'carrierwave'
 gem 'mini_magick'
+
+# アプリケーションサーバーのUnicornのgem
+group :production do
+  gem 'unicorn', '5.4.1'
+end

@@ -1,2 +1,7 @@
 %p
   Hi! Masanori.
+= form_with(model: @test_image, url: top_index_path, method: :post, class: 'form', local: true) do |f|
+  = f.label :image do
+    = icon('fas', 'camera')
+    = f.file_field :image
+  = f.submit "upgrade"

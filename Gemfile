@@ -69,3 +69,7 @@ gem 'pry-rails'
 gem 'devise'
 gem 'haml-rails'
 gem "font-awesome-sass"
+
+# 画像投稿するため
+gem 'carrierwave'
+gem 'mini_magick'

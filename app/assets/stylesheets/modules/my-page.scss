@@ -30,9 +30,8 @@
           background:#eee;
           font-size: 14px;
           color: #333;
-          border-top: 1px solid #eee;
-          border-bottom: 1px solid #eee;
           font-weight: 600;
+          cursor:pointer;
         }
         .mypage_nav_item2 {
         position: relative;
@@ -44,6 +43,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
         }
         .mypage_nav_item3{
         position: relative;
@@ -55,6 +55,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_item4 {
         position: relative;
@@ -66,6 +67,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_item5{
         position: relative;
@@ -77,6 +79,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_item6{
         position: relative;
@@ -88,6 +91,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_item7{
         position: relative;
@@ -99,6 +103,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .box1{
         position: relative;
@@ -120,6 +125,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set2{
         position: relative;
@@ -131,6 +137,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set3{
         position: relative;
@@ -142,6 +149,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set4{
         position: relative;
@@ -153,6 +161,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set5{
         position: relative;
@@ -164,6 +173,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set6{
         position: relative;
@@ -175,6 +185,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
       .mypage_nav_set7{
         position: relative;
@@ -186,6 +197,7 @@
         color: #333;
         border-bottom: 1px solid rgb(207, 206, 206);
         font-weight: 300;
+        cursor:pointer;
       }
   }
     .mypage_pro {
@@ -208,6 +220,7 @@
           position: absolute;
           top: 20%; 
           left: 45%;
+          cursor:pointer;
         }
         .user_name {
           width: 100px;
@@ -219,6 +232,7 @@
           text-align: center;
           line-height: 25px;
           color: #333;
+          cursor:pointer;
         }
         .user_evaluation{
           width: 80px;
@@ -230,6 +244,7 @@
           text-align: center;
           line-height: 30px;
           color: #333;
+          cursor:pointer;
 
         }
         .user_exhibits{
@@ -242,6 +257,7 @@
           text-align: center;
           line-height: 30px;
           color: #333;
+          cursor:pointer;
         }
     }
     .purchase_info{
@@ -265,6 +281,7 @@
       background-color:rgb(255, 255, 255);
       border-top: 2px solid #ea352d;
       font-weight: 600;
+      cursor:pointer;
       }
     .traded{
       width: 350px;
@@ -277,10 +294,11 @@
       left: 61.1%;
       background-color: #e6e4e4;
       font-weight: 600;
+      cursor:pointer;
     }
     .confirmation{
       width: 700px;
-      height: 282px;
+      height: 435px;
       display: block;
       position: absolute;
       text-align: center;
@@ -297,7 +315,6 @@
       line-height: 30px;
       color: #ccc;
       font-weight: 600;
-      
       }
     }
     }

@@ -1,16 +1,22 @@
-.wrapper-signinup
-  %p.iwasaki
-    Hi! Ms.Iwasaki.
-  = form_with(model: @user, url: user_session_path, class: 'form', local: true) do |f|
-    = devise_error_messages!
-    .field
-      .field-label
-        = f.label :email, "email"
-      .field-input
-        = f.email_field :email, autofocus: false
-    .field
-      .field-label
-        = f.label :password, "password"
-      .field-input
-        = f.password_field :password, autocomplete: "off"
-    = f.submit "sign in", class: 'btn signin-btn'
+.single-wrapper
+  %header.single-header
+    = link_to "#" do
+      = image_tag "logo/logo.png", size: '185x49', class: "single-header__logo"
+  .single-main  
+    /* ここで部分テンプレートを呼び出す */
+    = render partial: "sign-in"
+  %footer.single-footer
+    %ul.single-footer__policies
+      %li< 
+        = link_to "プライバシーポリシー", "#"
+      %li< 
+        = link_to "FURIMA利用規約", "#"
+      %li< 
+        = link_to "特定商取引に関する表記", "#"
+    .single-footer__inc
+      = link_to "#" do
+        = image_tag "logo/logo-white.png", size: '185x49', class: "single-footer__inc-logo"
+      %p.single-footer__inc-text
+        %small ©︎ FRIMA.inc
+
+

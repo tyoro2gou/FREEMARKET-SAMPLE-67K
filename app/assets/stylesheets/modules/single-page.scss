@@ -1,0 +1,64 @@
+@import 'config/variable';
+
+/* 新規登録・ログイン・出品ページの骨組みです */
+.single-wrapper{
+  background-color: $backgroundGray;
+  /* ヘッダー */
+  .single-header{
+    height: 128px;
+    width: 100vw;
+    text-align: center;
+    &__logo{
+      margin-top: 45px;
+    }
+  }
+  /* メイン */
+  .single-main{
+    .single-page{
+      height: 100%;
+      width: 700px;
+      background-color: $white;
+      margin: 0 auto;
+      &__title{
+        height: 97px;
+        width: 100%;
+        border-bottom: 1px solid $backgroundGray;
+        text-align: center;
+        padding: 32px;
+        &-text{
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+      &__contents{
+        padding: 40px 40px 64px;
+        text-align: center;
+      }
+    }
+  }
+  /* フッター*/
+  .single-footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    &__policies{
+      display: flex;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-evenly;
+      li{
+        a{
+          color: $fontGray;
+          text-decoration: none;
+        }
+      }
+    }
+    &__inc{
+      text-align: center;
+      &-logo{
+        margin-top: 40px;
+      }
+    }
+  }
+}

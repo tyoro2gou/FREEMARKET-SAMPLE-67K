@@ -1,5 +1,5 @@
 @import 'config/variable';
-@import 'mixin/mixin';
+@import 'mixin/single-pages';
 
 /* facebookとgoogleのボタン用！ */
 /* 新規登録画面でも使う可能性があるので、切り出してます */
@@ -29,16 +29,9 @@
 }
 
 .login-panel{
-  height: 100%;
-  width: 456px;
-  background-color: $white;
-  margin: 0 auto;
+  @include single-contents(456px);
   &__noaccount{
-    height: 144px;
-    width: 100%;
-    border-bottom: 1px solid $backgroundGray;
-    text-align: center;
-    padding: 40px 64px;
+    @include single-title(144px, 40px 64px);
     &-text{
       color: $fontGray;
       font-size: 14px;

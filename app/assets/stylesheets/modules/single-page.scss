@@ -1,8 +1,9 @@
 @import 'config/variable';
+@import 'mixin/single-pages';
 
 /* 新規登録・ログイン・出品ページの骨組みです */
 .single-wrapper{
-  background-color: $backgroundGray;
+  background-color: #f5f5f5;
   /* ヘッダー */
   .single-header{
     height: 128px;
@@ -15,16 +16,9 @@
   /* メイン */
   .single-main{
     .single-page{
-      height: 100%;
-      width: 700px;
-      background-color: $white;
-      margin: 0 auto;
+      @include single-contents(700px);
       &__title{
-        height: 97px;
-        width: 100%;
-        border-bottom: 1px solid $backgroundGray;
-        text-align: center;
-        padding: 32px;
+        @include single-title(97px, 32px);
         &-text{
           font-size: 22px;
           font-weight: bold;

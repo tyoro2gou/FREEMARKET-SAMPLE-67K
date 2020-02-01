@@ -24,8 +24,7 @@
       .mypage_nav_set2
         発送元・お届け先住所変更
       .mypage_nav_set3
-        %a{:href => "/cards"}
-          支払い方法
+        支払い方法
       .mypage_nav_set4
         メール/パスワード
       .mypage_nav_set5
@@ -34,21 +33,21 @@
         電話番号の確認
       .mypage_nav_set7
         ログアウト
-    .mypage_pro
-      .pro_ground
-        .user-icon
-        .user_name
-          sample_user
-        .user_evaluation
-          評価 0
-        .user_exhibits
-          出品数 0
-      .purchase_info
-        購入した商品
-      .trading
-        取引中
-      .traded
-        過去の取引
-      .confirmation
-        .confirmation_info
-          取引中の商品はありません
+    .cards_index
+      .card_info
+        支払い方法
+      .card_list
+        .card_list_jp
+          クレジットカード一覧
+        .card_btn
+          .card_btn_icon
+            %i.far.fa-credit-card
+          .card_btn_jp
+            %a{:href => "/cards/new"}
+              クレジットカードを追加する
+        .card_line
+        .card_pay_info 
+          支払い方法について
+          .card_pay_icon
+            %i.fas.fa-chevron-right
+

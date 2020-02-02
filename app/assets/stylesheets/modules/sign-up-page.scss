@@ -34,28 +34,10 @@
         width: calc(50% - 6px);
       }
     }
-
-    /* パスワードのところ */
     &__notification{
       color: $lightGray;
       font-size: 14px;
       margin-top: 8px;
-    }
-    &__password-revelation{
-      margin-top: 16px;
-      &__checkbox{
-      
-      }
-      &__text{
-        font-size: 14px;
-        margin-left: 5px;
-        color: $fontGray;
-      }
-    }
-    &__heading{
-      font-size: 16px;
-      color: $fontGray;
-      font-weight: bold;
     }
     &__text{
       margin-top: 8px;
@@ -71,4 +53,13 @@
     }
   }
 }
-
+#user_birthday_info_1i, #user_birthday_info_2i, #user_birthday_info_3i{
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid $lightGray;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}

@@ -34,10 +34,12 @@ Things you may want to cover:
 |family_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday_info|string|null: false|
-|phone_number|string|null: false|
+|phone_number|string|
+|postal_code|string|null:false｜
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |address|string|null: false|
+|building|string|
 ### Association
 - has_many :items
 - has_many :comments

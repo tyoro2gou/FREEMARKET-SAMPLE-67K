@@ -36,7 +36,8 @@ Things you may want to cover:
 |birthday_info|string|null: false|
 |phone_number|string|
 ### Association
-- has_many :items
+- has_many :item_users
+- has_many :items,  through: :item_users
 - has_many :comments
 - has_many :cards
 - has_one :addresses
@@ -52,11 +53,6 @@ Things you may want to cover:
 |building|string|
 ### Association
 - belongs_to :user
-- has_many :item_users
-- has_many :items,  through: :item_users
-- has_many :comments
-- has_many :cards
-
 
 
 ## imagesテーブル

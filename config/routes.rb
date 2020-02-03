@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :top, only: [:new, :create]
   resources :users, only: :show
+  resources :items, only: [:index, :new, :create, :show]
   resources :cards, only: [:index, :new, :create]
 end

@@ -1,0 +1,58 @@
+
+@import 'mixin/single-pages';
+
+/* 新規登録・ログイン・出品ページの骨組みです */
+.single-wrapper{
+  background-color: #f5f5f5;
+  /* ヘッダー */
+  .single-header{
+    height: 128px;
+    width: 100vw;
+    text-align: center;
+    &__logo{
+      margin-top: 45px;
+    }
+  }
+  /* メイン */
+  .single-main{
+    .single-page{
+      @include single-contents(700px);
+      &__title{
+        @include single-title(97px, 32px);
+        &-text{
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+      &__contents{
+        padding: 40px 40px 64px;
+        text-align: center;
+      }
+    }
+  }
+  /* フッター*/
+  .single-footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    &__policies{
+      display: flex;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-evenly;
+      li{
+        a{
+          color: $fontGray;
+          text-decoration: none;
+        }
+      }
+    }
+    &__inc{
+      text-align: center;
+      &-logo{
+        margin-top: 40px;
+      }
+    }
+  }
+}

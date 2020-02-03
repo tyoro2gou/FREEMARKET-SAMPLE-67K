@@ -1,0 +1,28 @@
+/* ログイン・新規登録・出品ページで使うmixinです */
+
+@mixin buttons($color){
+  display: inline-block;
+  height: 48px;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  color: $color;
+}
+
+@mixin single-contents($width){
+  height: 100%;
+  width: $width;
+  background-color: $white;
+  margin: 0 auto;
+}
+
+@mixin single-title($height,$padding){
+  height: $height;
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+  padding: $padding;
+}
+

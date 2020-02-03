@@ -246,64 +246,11 @@
         font-size: 16px;
         font-weight: 100;
       }
-      .credit_card_logo_visa{
-        width: 60px;
-        height: 40px;
-        position: absolute;
-        background-image: url("logo/VISA　Cardロゴ.jpg");
-        background-size:contain;
-      }
-      .credit_card_logo_mastercard{
-        width: 50px;
-        height: 40px;
-        position: absolute;
-        left: 55px;
-        background-image: url("logo/Master Cardロゴ.png");
-        background-size:contain;
-      }
-      .credit_card_logo_saison{
-        width: 50px;
-        height: 33.3px;
-        position: absolute;
-        left: 100px;
-        margin: 5px;
-        background-image: url("logo/SAISON Cardロゴ.png");
-        background-size:contain;
-      }
-      .credit_card_logo_jcb{
-        width: 52px;
-        height: 40px;
-        position: absolute;
-        left: 157px;
-        margin: 2px;
-        background-image: url("logo/JCB Cardロゴ.gif");
-        background-size:contain;
-      }
-      .credit_card_logo_amex{
-        width: 40px;
-        height: 39.5px;
-        position: absolute;
-        left: 213px;
-        margin: 3px;
-        background-image: url("logo/American　Express　Cardロゴ.png");
-        background-size:contain;
-      }
-      .credit_card_logo_diners{
-        width: 40px;
+      .credit_card_logo{
+        width: 250px;
         height: 30px;
         position: absolute;
-        left: 255px;
-        margin: 8px;
-        background-image: url("logo/Diners Cardロゴ.jpg");
-        background-size:contain;
-      }
-      .credit_card_logo_discover{
-        width: 40px;
-        height: 25px;
-        position: absolute;
-        left: 300px;
-        margin: 10px;
-        background-image: url("logo/Discoverロゴ.png");
+        background-image: image-url("logo/all-cards.jpg");
         background-size:contain;
       }
     }

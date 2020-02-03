@@ -1,0 +1,74 @@
+
+@import 'mixin/single-pages';
+
+/* facebookとgoogleのボタン用！ */
+/* 新規登録画面でも使う可能性があるので、切り出してます */
+.facebook-account{
+  @include buttons($white);
+  background-color: $facebookBlue;
+  border: 1px solid transparent;
+  position: relative;
+  &__icon{
+    display: inline-block;
+    font-size: 26px;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+  }
+}
+.google-account{
+  @include buttons($fontGray);
+  border: 1px solid $lightGray;
+  position: relative;
+  margin-top: 16px;
+  &__logo{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+  }
+}
+
+.login-panel{
+  @include single-contents(456px);
+  &__noaccount{
+    @include single-title(144px, 40px 64px);
+    &-text{
+      color: $fontGray;
+      font-size: 14px;
+    }
+    &-btn{
+      @include buttons($white);
+      background-color: $blue;
+      margin-top: 8px;
+    }
+  }
+  &__sns{
+    padding: 32px 67px;
+  }
+  &__address{
+    height: 350px;
+    width: 328px;
+    margin: 0 auto;
+    &__input{
+      &-form{
+        height: 48px;
+        width: 100%;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid $lightGray;
+        margin-top: 24px;
+      }
+      &-btn{
+        @include buttons($white);
+        background-color: $mainBlue;
+        margin: 24px 0 40px;
+        cursor: pointer;
+      }
+    }
+    &__password-forgot{
+      color: $blue;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  }
+}

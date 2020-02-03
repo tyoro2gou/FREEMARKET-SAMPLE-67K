@@ -1,0 +1,93 @@
+.single-page
+  .single-page__title
+    %h2.single-page__title-text
+      会員情報入力
+  .single-page__contents
+    = form_with(model: @user, url: user_registration_path, class: "signup-form", local: true) do |f|
+      = devise_error_messages!
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :nickname, class: "signup-form__group__title__label" do
+            ニックネーム
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :nickname, class: "signup-form__group__input", placeholder: "例) フリマ太郎" 
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :email, class: "signup-form__group__title__label" do
+            メールアドレス
+          %span.signup-form__group__title__required
+            必須
+        = f.email_field :email, class: "signup-form__group__input", placeholder: "PC・携帯どちらでも可"
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :password, class: "signup-form__group__title__label" do
+            パスワード
+          %span.signup-form__group__title__required
+            必須
+        = f.password_field :password, class: "signup-form__group__input", placeholder: "7文字以上の半角英数字"
+        %p.signup-form__group__notification
+          ※ 英字と数字の両方を含めて設定してください
+      .signup-form__group
+        .signup-form__group__title
+          %span.signup-form__group__title__label
+            お名前(全角)
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :family_name, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例）山田"
+        = f.text_field :last_name, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例）綾"
+      .signup-form__group
+        .signup-form__group__title
+          %span.signup-form__group__title__label
+            お名前(カナ)
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :family_name_kana, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) ヤマダ"
+        = f.text_field :last_name_kana, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例 アヤ"
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :birthday_info, class: "signup-form__group__title__label" do
+            生年月日
+          %span.signup-form__group__title__required
+            必須
+        .signup-form__group__bithday
+          = f.date_select(:birthday_info, start_year: 1900, end_year: (Time.now.year))
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :phone_number, class: "signup-form__group__title__label" do
+            電話番号
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910" 
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :prefectures, class: "signup-form__group__title__label" do
+            都道府県
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :prefectures, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 東京都" 
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :municipalities, class: "signup-form__group__title__label" do
+            市区町村
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :municipalities, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 渋谷区" 
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :address, class: "signup-form__group__title__label" do
+            番地
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
+      .signup-form__group
+        %p.signup-form__group__notification
+          ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .signup-form__group
+        %p.signup-form__group__text
+          以下のボタンを押すことにより、                                                   
+          = link_to "利用規約", "#", class: "signup-form__group__text__link"
+          に同意したものとみなします。
+        .signup-form__group__btn
+          = f.submit "新規会員登録", class: "login-panel__address__input-btn"
+    

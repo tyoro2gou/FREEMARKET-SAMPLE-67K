@@ -1,0 +1,26 @@
+.header
+  .header__inner
+    .mainHeader
+      .mainHeader__icon
+        = link_to'#' do
+          = image_tag 'logo/logo.png', :size =>'140x41'
+
+      .searchBox
+        %input.searchBox__input{:name => "search", :placeholder => "キーワードから探す", :type => "text"}/
+        .searchBox__btn
+          = link_to'#' do
+            = image_tag'icon/icon-search 1.png', :size =>'20x20',class: 'searchBox__btn--icon'
+
+    .sideHeader
+      %ul.sideHeader__left
+        %li.sideHeader__left--items
+          カテゴリー
+        %li.sideHeader__left--items
+          ブランド
+      %ul.sideHeader__right
+        %li.sideHeader__right--log
+          = link_to'#',class: 'login-btn' do
+            ログイン
+        %li.sideHeader__right--new
+          = link_to'#',class: 'new-btn' do
+            新規会員登録

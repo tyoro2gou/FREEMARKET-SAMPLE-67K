@@ -1,0 +1,65 @@
+
+.signup-form{
+  width: 343px;
+  margin: 0 auto;
+  &__group{
+    text-align: left;
+    margin-top: 32px;
+    &__title{
+      &__label{
+        font-size: 14px;
+        color: $fontGray;
+        font-weight: bold;
+      }
+      &__required{
+        background-color: $red;
+        font-size: 12px;
+        color: $white;
+        padding: 2px 4px;
+        border-radius: 2px;
+        margin-left: 8px;
+      }
+    }
+    &__input{
+      width: 100%;
+      height: 48px;
+      padding: 10px 16px 8px;
+      margin-top: 8px;
+      border-radius: 4px;
+      border: 1px solid $lightGray;
+      background: $white;
+      line-height: 1.5;
+      font-size: 16px;
+      &__half{
+        width: calc(50% - 6px);
+      }
+    }
+    &__notification{
+      color: $lightGray;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    &__text{
+      margin-top: 8px;
+      font-size: 14px;
+      color: $fontGray;
+      &__link{
+        color: $blue;
+        text-decoration: underline;
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+#user_birthday_info_1i, #user_birthday_info_2i, #user_birthday_info_3i{
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid $lightGray;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}

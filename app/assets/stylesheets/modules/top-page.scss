@@ -264,30 +264,6 @@
           }
       }
     }
-  .appBanner {
-    background-image: image-url("pict/bg-appBanner-pict.jpg");
-    padding: 100px 40px;
-    background-size: cover;
-    background-position: center;
-    margin-top: 110px;
-      &__inner {
-        color: $white;
-        text-align: center;
-        &--title {
-          text-shadow: 0 0 5px rgba(0,0,0,0.4);
-          font-size: 24px;
-          font-weight: bold;
-          line-height: 1.4;
-        }
-        &--text {
-          font-size: 35px;
-          text-shadow: 0 0 5px rgba(0,0,0,0.4);
-        }
-        &--icon {
-          margin: 20px auto 0;
-        }
-      }
-  }
   .google-btn:hover {
     opacity: 0.75;
   }
@@ -296,28 +272,4 @@
   }
   .apple-btn {
     margin-right: 10px;
-  }
-  
-  .purchaseBtn {
-    width: 120px;
-    background: $mainBlue;
-    text-align: center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
-    &__text {
-      color: $white;
-      display: block;
-      font-size: 18px;
-      text-decoration: none;
-      margin-bottom: 5px;
-    }
-    &__icon {
-      width: 100%;
-    }
-  }
-  .purchaseBtn:hover {
-    opacity: 0.75;
   }

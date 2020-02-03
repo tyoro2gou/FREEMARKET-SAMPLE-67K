@@ -35,15 +35,23 @@ Things you may want to cover:
 |last_name_kana|string|null: false|
 |birthday_info|string|null: false|
 |phone_number|string|
+### Association
+- has_many :items
+- has_many :comments
+- has_many :cards
+- has_many :addresses
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
 |postal_code|string|null:false｜
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |address|string|null: false|
 |building|string|
 ### Association
-- has_many :items
-- has_many :comments
-- has_many :cards
+- belongs_to :user
 
 
 ## imagesテーブル

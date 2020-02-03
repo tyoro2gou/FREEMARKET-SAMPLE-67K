@@ -39,7 +39,8 @@ Things you may want to cover:
 |municipalities|string|null: false|
 |address|string|null: false|
 ### Association
-- has_many :items
+- has_many :item_users
+- has_many :items,  through: :item_users
 - has_many :comments
 - has_many :cards
 
@@ -63,16 +64,24 @@ Things you may want to cover:
 |region|string|null: false|
 |shopping_data|string|null: false|
 |price|string|null: false|
-|saler_id|reference|null: false, foreign_key: true|
-|buyer_id|reference|null: false, foreign_key: true|
 |category_id|reference|null: false, foreign_key: true|
 |bland_id|reference|null: false, foreign_key: true|
 ## Association
 - has_many :comments
 - has_many :images
-- belongs_to :user
+- has_many :item_users
+- has_many :users,  through: :item_users
 - belongs_to :category
 - belongs_to :bland
+
+
+## item_usersテーブル
+|item_id|reference|null: false, foreign_key: true|
+|saler_id|reference|null: false, foreign_key: true|
+|buyer_id|reference|foreign_key: true|
+## Association
+- belongs_to :item
+- belongs_to :user
 
 
 ## categoriesテーブル

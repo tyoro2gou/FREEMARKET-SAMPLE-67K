@@ -44,13 +44,7 @@
         .credit_card_input_btn
           = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
             = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-        .credit_card_logo_visa
-        .credit_card_logo_mastercard
-        .credit_card_logo_saison
-        .credit_card_logo_jcb
-        .credit_card_logo_amex
-        .credit_card_logo_diners
-        .credit_card_logo_discover
+        .credit_card_logo
       .credit_card_deadline
         .credit_card_deadline_info
           有効期限

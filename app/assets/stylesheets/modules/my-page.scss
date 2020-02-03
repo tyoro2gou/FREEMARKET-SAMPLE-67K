@@ -207,14 +207,14 @@
     text-shadow: none;
       .pro_ground{
         position: relative;
-        background-image: url("pict/IMG_1843-768x576.jpg");
+        background-image: image-url("pict/IMG_1843-768x576.jpg");
         width: 700px;
         height: 225px;
         background-size: cover;
         .user-icon{
           width: 70px;
           height: 70px;
-          background-image: url("pict/16_2_302.png");
+          background-image: image-url("pict/16_2_302.png");
           background-size:contain;
           display: block;
           position: absolute;

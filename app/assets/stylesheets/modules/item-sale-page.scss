@@ -1,0 +1,295 @@
+.wrapper-itemsale{
+  background-color: $backgroundGray;
+  /* ヘッダー */
+  header{
+    height: 128px;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+  }
+  /* メイン */
+  .contents{
+    height: auto;
+    width: 700px;
+    background-color: $white;
+    margin: 0 auto;
+
+    &__title{
+      height: 97px;
+      width: 100%;
+      border-bottom: 1px solid $backgroundGray;
+      text-align: center;
+      padding: 32px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    &__upload{
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      border-bottom: 1px solid $backgroundGray;
+      .title {
+        font-weight: bold;
+        span {
+          font-size: 0.75rem;
+          background-color: $red;
+          padding: 2px 4px;
+          border-radius: 2px;
+          margin-left: 8px;
+          color: $white;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin: 8px 0 10px 0;
+      }
+      .upload-area {
+        height: 162px;
+        width: 100%;
+        background-color: $backgroundGray;
+        border: 1px dashed $lightGray;
+        padding: 40px;
+      }
+    }
+
+    &__information {
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      border-bottom: 1px solid $backgroundGray;
+      .title {
+        font-size: 14px;
+        font-weight: bold;
+        span {
+          font-size: 0.75rem;
+          background-color: $red;
+          padding: 2px 4px;
+          border-radius: 2px;
+          margin-left: 8px;
+          color: $white;
+        }
+      }
+      .name-form {
+        height: 48px;
+        width: 100%;
+        margin: 8px 0 40px 0;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid $lightGray;
+      }
+      .title {
+        font-size: 14px;
+        font-weight: bold;
+        span {
+          font-size: 0.75rem;
+          background-color: $red;
+          padding: 2px 4px;
+          border-radius: 2px;
+          margin-left: 8px;
+          color: $white;
+        }
+      }
+      .description-form {
+        height: 142px;
+        width: 100%;
+        margin-top: 8px;
+        padding: 10px 16px 8px;
+        border: 1px solid $lightGray;
+      }
+    }
+
+    &__details {
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      border-bottom: 1px solid $backgroundGray;
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        color: $fontGray;
+      }
+      .right-box {
+        height: 180px;
+        width: 400px;
+        .title {
+          font-size: 14px;
+          font-weight: bold;
+          span {
+            font-size: 0.75rem;
+            background-color: $red;
+            padding: 2px 4px;
+            border-radius: 2px;
+            margin-left: 8px;
+            color: $white;
+          }
+        }
+        select {
+          height: 48px;
+          width: 100%;
+          border-radius: 4px;
+          border: 1px solid $lightGray;
+          margin-top: 8px;
+        }
+        select#category {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &__shipping {
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      border-bottom: 1px solid $backgroundGray;
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        color: $fontGray;
+      }
+      .right-box {
+        height: auto;
+        width: 400px;
+        .title {
+          font-size: 14px;
+          font-weight: bold;
+          span {
+            font-size: 0.75rem;
+            background-color: $red;
+            padding: 2px 4px;
+            border-radius: 2px;
+            margin-left: 8px;
+            color: $white;
+          }
+        }
+        select {
+          height: 48px;
+          width: 100%;
+          border-radius: 4px;
+          border: 1px solid $lightGray;
+          margin-top: 8px;
+        }
+        select#postage,#region {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &__price {
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      border-bottom: 1px solid $backgroundGray;
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 14px;
+        font-weight: bold;
+        color: $fontGray;
+      }
+      .right-box {
+        height: auto;
+        width: 400px;
+        &__upper {
+          height: auto;
+          width: 100%;
+          padding-bottom: 24px;
+          display: flex;
+          justify-content: space-between;
+          .title {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 48px;
+            span {
+              font-size: 0.75rem;
+              background-color: $red;
+              padding: 2px 4px;
+              border-radius: 2px;
+              margin-left: 8px;
+              color: $white;
+            }
+          }
+          .price-form {
+            height: 48px;
+            width: 160px;
+            border-radius: 4px;
+            padding: 10px 16px 8px;
+            border: 1px solid $lightGray;
+            margin-bottom: 24px;
+          }
+        }
+        .charge {
+          height: 63px;
+          width: 100%;
+          line-height: 63px;
+          border-top: 1px solid $lightGray;
+          border-bottom: 1px solid $lightGray;
+          font-size: 14px;
+          font-weight: normal;
+        }
+        .profit {
+          font-size: 1rem;
+          height: 83px;
+          width: 100%;
+          padding: 24px 0;
+        }
+      }
+    }
+
+    &__end {
+      height: auto;
+      width: 100%;
+      padding: 40px;
+      p {
+        font-size: 14px;
+      }
+      .sale-btn {
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        background-color: $red;
+        color: $white;
+        margin-top: 40px;
+      }
+      .back-btn {
+        display: block;
+        height: 50px;
+        width: auto;
+        line-height: 50px;
+        text-align: center;
+        background-color: $lightGray;
+        color: $white;
+        margin: 24px 170px;
+      }
+    }
+  }
+  /* フッター*/
+  .single-footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    &__policies{
+      display: flex;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-evenly;
+      li{
+        a{
+          color: $fontGray;
+          text-decoration: none;
+        }
+      }
+    }
+    &__inc{
+      text-align: center;
+      &-logo{
+        margin-top: 40px;
+      }
+    }
+  }
+}

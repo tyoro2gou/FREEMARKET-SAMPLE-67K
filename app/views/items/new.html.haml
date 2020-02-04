@@ -46,7 +46,7 @@
             商品の状態
             %span
               必須
-          = f.select :category, id: "status"
+          = f.collection_select :status, Status.all, :id, :name
 
       .contents__shipping
         %p
@@ -56,19 +56,22 @@
             配送料の負担
             %span
               必須
-          = f.select :postage, id: "postage"
+          = f.collection_select :postage, Postage.all, :id, :name
+
 
           = f.label :region, class: "title" do
             発送元の地域
             %span
               必須
-          = f.select :region, id: "region"
+          = f.collection_select :region, Region.all, :id, :name
+
 
           = f.label :shipping_date, class: "title" do
             発送までの日数
             %span
               必須
-          = f.select :shipping_date, id: "shipping_date"
+          = f.collection_select :shipping_date, ShippingDate.all, :id, :name
+
 
       .contents__price
         %p

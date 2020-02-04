@@ -45,7 +45,7 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
+|user_id|reference|foreign_key: true|
 |postal_code|string|null:false｜
 |prefectures|string|null: false|
 |municipalities|string|null: false|

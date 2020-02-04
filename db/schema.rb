@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 2020_02_04_043155) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 40, null: false
+    t.text "description", null: false
+    t.integer "status", limit: 1, default: 0, null: false
+    t.integer "postage", limit: 1, default: 0, null: false
+    t.integer "region", limit: 1, default: 0, null: false
+    t.integer "shipping_date", limit: 1, default: 0, null: false
+    t.string "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,20 +71,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_043155) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "family_name", null: false
-    t.string "last_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.string "birthday_info", null: false
-    t.string "phone_number"
-    t.string "postal_code", null: false
-    t.string "prefectures", null: false
-    t.string "municipalities", null: false
-    t.string "address", null: false
-    t.string "building"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

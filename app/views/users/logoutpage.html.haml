@@ -1,0 +1,7 @@
+= render "top/header"
+.mypage_wrapper
+  = render "users/contents"
+  .mypage_pro
+    .logout_btn
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+= render "top/footer"

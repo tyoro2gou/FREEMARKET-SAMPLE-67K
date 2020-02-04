@@ -1,47 +1,39 @@
 .mypage_wrapper{
-  background-color: #f5f5f5;
+  background-color: $white;
   font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-  .header {
-    height: 80px;
-    border-bottom:30px solid #e7e5e2;
-    background-color: rgb(255, 255, 255);
-    color: #ffffff;
-    &__logo {
-    text-align: center;
-    font-size: 36px;
-    line-height: 80px;
-    }
-}
-  .contents {
+  position: relative;
+  display: flex;
+  .contents1 {
     background-color: #f5f5f5;
     height: 1000px;
     display: flex;
-    margin: 40px auto 0;
-    width: 1020px;
+    width: 280px;
+    color: $fontGray;
     .mypage_nav {
       width: 280px;
-      margin: 0 40px 0 0;
-      background-color: #f5f5f5;
-        .mypage_nav_item1 {
-          position: relative;
-          display: block;
-          min-height: 27px;
-          padding: 16px;
-          background:#eee;
-          font-size: 14px;
-          color: #333;
-          font-weight: 600;
-          cursor:pointer;
-        }
+      margin: 40px auto 0;
+      padding-top: 15px;
+      position: absolute;
+      left: 15%;
+      .mypage_nav_item1 {
+        position: relative;
+        display: block;
+        min-height: 27px;
+        padding: 16px;
+        background:#eee;
+        font-size: 14px;
+        font-weight: 600;
+        cursor:pointer;
+      }
         .mypage_nav_item2 {
         position: relative;
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
         }
@@ -50,10 +42,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -62,10 +54,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -74,10 +66,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color:$fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -86,10 +78,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color:$fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -98,10 +90,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color:$fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -112,7 +104,7 @@
         padding: 16px;
         background: #f5f5f5;
         font-size: 16px;
-        color:black;
+        color:$black;
         font-weight: 600;
       }
       .mypage_nav_set1{
@@ -120,10 +112,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color:$fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -132,10 +124,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -144,10 +136,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -156,10 +148,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -168,10 +160,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color:$fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -180,10 +172,10 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
@@ -192,19 +184,30 @@
         display: block;
         min-height: 27px;
         padding: 16px;
-        background:rgb(255, 255, 255);
+        background:$itemgray;
         font-size: 14px;
-        color: #333;
-        border-bottom: 1px solid rgb(207, 206, 206);
+        color: $fontGray;
+        border-bottom: 1px solid $bordergray;
         font-weight: 300;
         cursor:pointer;
       }
   }
-    .mypage_pro {
-    width: 700px;
+}
+  .contents2{
     background-color: #f5f5f5;
-    color: #fff;
+    display: flex;
+    width: 700px;
+    padding-top: 15px;
+    margin: 40px auto ;
+
+    .mypage_pro {
+    width: 350px;
+    color:$white;
     text-shadow: none;
+    margin: 0 40px 0 0;
+    position: absolute;
+    right: 35%;
+
       .pro_ground{
         position: relative;
         background-image: image-url("pict/IMG_1843-768x576.jpg");
@@ -231,7 +234,7 @@
           left: 43%;
           text-align: center;
           line-height: 25px;
-          color: #333;
+          color: $fontGray;
           cursor:pointer;
         }
         .user_evaluation{
@@ -243,7 +246,7 @@
           left: 38%;
           text-align: center;
           line-height: 30px;
-          color: #333;
+          color: $fontGray;
           cursor:pointer;
 
         }
@@ -256,7 +259,7 @@
           right: 38%;
           text-align: center;
           line-height: 30px;
-          color: #333;
+          color: $fontGray;
           cursor:pointer;
         }
     }
@@ -267,17 +270,16 @@
       background: #fafafa;
       font-size: 16px;
       line-height: 80px;
-      color: #333;
+      color: $fontGray;
       font-weight: 600;
     }
     .trading{
       width: 350px;
       height: 70px;
-      display: block;
       position: absolute;
       text-align: center;
       line-height: 70px;
-      color: #333;
+      color: $fontGray;
       background-color:rgb(255, 255, 255);
       border-top: 2px solid #ea352d;
       font-weight: 600;
@@ -286,12 +288,11 @@
     .traded{
       width: 350px;
       height: 70px;
-      display: block;
       position: absolute;
+      left: 100%;
       text-align: center;
       line-height: 70px;
-      color: #333;
-      left: 61.1%;
+      color: $fontGray;
       background-color: #e6e4e4;
       font-weight: 600;
       cursor:pointer;
@@ -299,17 +300,14 @@
     .confirmation{
       width: 700px;
       height: 435px;
-      display: block;
-      position: absolute;
       text-align: center;
       line-height: 70px;
-      color: #333;
+      color:$fontGray;
       top: 62.7%;
-      background-color:rgb(255, 255, 255);
+      background-color:$itemgray;
       .confirmation_info{
       width:700px;
       height: 30px;
-      background-color:rgb(255, 255, 255);
       position: absolute;
       top: 70%;
       line-height: 30px;
@@ -318,5 +316,5 @@
       }
     }
     }
-}
+  }
 }

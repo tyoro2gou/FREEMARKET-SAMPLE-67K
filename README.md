@@ -42,6 +42,7 @@ Things you may want to cover:
 - has_many :cards
 - has_one :addresses
 
+
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -102,7 +103,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|path|integer|null: false|
+|path|string|null: false|
 ### Association
 - has_many :items
 - has_ancestry

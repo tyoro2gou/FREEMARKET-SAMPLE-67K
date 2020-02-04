@@ -89,3 +89,6 @@ gem 'fog-aws'
 
 # Payjpでクレジットカード登録と削除機能
 gem 'payjp'
+# Payjpのテスト秘密鍵を管理するため。
+gem 'dotenv-rails'
+gem "jquery-rails"

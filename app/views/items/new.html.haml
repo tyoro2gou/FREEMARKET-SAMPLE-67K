@@ -26,7 +26,7 @@
             必須
         = f.text_field :name, class: "name-form", placeholder: "商品名（必須40文字まで）"
 
-        = f.label :name, class: "title" do
+        = f.label :description, class: "title" do
           商品の説明
           %span
             必須
@@ -40,7 +40,8 @@
             カテゴリー
             %span
               必須
-          = f.select :category, id: "category"
+          = f.collection_select :category, Category.where(ancestry: nil), :id, :name
+
 
           = f.label :status, class: "title" do
             商品の状態
@@ -82,11 +83,16 @@
               価格
               %span
                 必須
-            = f.text_field :name, class: "price-form", placeholder: "例）300"
+            %p¥
+            = f.text_field :price, class: "price-form", placeholder: "例）300"
           %p.charge
             販売手数料 (10%)
+            %span
+              ¥30
           %p.profit
             販売利益
+            %span
+              ¥270
       
       .contents__end
         %p

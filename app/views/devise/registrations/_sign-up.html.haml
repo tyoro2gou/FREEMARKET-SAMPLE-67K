@@ -51,13 +51,13 @@
           %span.signup-form__group__title__required
             必須
         .signup-form__group__bithday
-          = f.date_select(:birthday_info, start_year: 1900, end_year: (Time.now.year))
+          = f.text_field :birthday_info, class: "signup-form__group__input", placeholder: "例）19950401"
       .signup-form__group
         .signup-form__group__title
           = f.label :phone_number, class: "signup-form__group__title__label" do
             電話番号
-          %span.signup-form__group__title__required
-            必須
+          %span.signup-form__group__title__optional
+            任意
         = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910" 
       .signup-form__group
         .signup-form__group__title
@@ -80,6 +80,13 @@
           %span.signup-form__group__title__required
             必須
         = f.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :building, class: "signup-form__group__title__label" do
+            番地
+          %span.signup-form__group__title__optional
+            任意
+        = f.text_field :building, class: "signup-form__group__input", placeholder: "例) フレーム神南坂401" 
       .signup-form__group
         %p.signup-form__group__notification
           ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

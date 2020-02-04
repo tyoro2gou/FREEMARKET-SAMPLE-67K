@@ -61,6 +61,13 @@
         = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910" 
       .signup-form__group
         .signup-form__group__title
+          = f.label :postal_code, class: "signup-form__group__title__label" do
+            郵便番号
+          %span.signup-form__group__title__required
+            必須
+        = f.text_field :postal_code, class: "signup-form__group__input", placeholder: "例) 1500041" 
+      .signup-form__group
+        .signup-form__group__title
           = f.label :prefectures, class: "signup-form__group__title__label" do
             都道府県
           %span.signup-form__group__title__required

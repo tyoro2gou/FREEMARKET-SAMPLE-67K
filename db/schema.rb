@@ -45,11 +45,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_031737) do
     t.string "last_name_kana", null: false
     t.string "birthday_info", null: false
     t.string "phone_number"
-    t.string "postal_code", null: false
-    t.string "prefectures", null: false
-    t.string "municipalities", null: false
-    t.string "address", null: false
-    t.string "building"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

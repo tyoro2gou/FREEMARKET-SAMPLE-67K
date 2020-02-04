@@ -1,72 +1,40 @@
+= render "top/header"
 .mypage_wrapper
-  .header
-    .header__logo
-  .contents
-    .mypage_nav
-      .mypage_nav_item1
-        マイページ
-      .mypage_nav_item2
-        出品する
-      .mypage_nav_item3
-        出品した商品-出品中
-      .mypage_nav_item4 
-        出品した商品-取引中
-      .mypage_nav_item5
-        購入した商品-取引中
-      .mypage_nav_item6
-        購入した商品-過去の取引
-      .mypage_nav_item7
-        いいね！一覧
-      .box1
-        設定
-      .mypage_nav_set1
-        プロフィール
-      .mypage_nav_set2
-        発送元・お届け先住所変更
-      .mypage_nav_set3
-        支払い方法
-      .mypage_nav_set4
-        メール/パスワード
-      .mypage_nav_set5
-        本人情報
-      .mypage_nav_set6
-        電話番号の確認
-      .mypage_nav_set7
-        ログアウト
-    .cards_index
-      .credit_info
-        クレジットカード情報入力
-      .credit_card_number
-        .credit_card_number_info
-          カード番号
-        .credit_card_number_required
-          必須
-        .credit_card_input_btn
-          = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-        .credit_card_logo
-      .credit_card_deadline
-        .credit_card_deadline_info
-          有効期限
-        .credit_card_deadline_required
-          必須
-        .credit_card_deadline_month_year
-          = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-            != sprintf(f.date_select(:expiration_date,with_css_classes:'XXXXX', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
-      .card_security
-        .card_security_number_info
-          セキュリティコード
-        .card_security_number_required
-          必須
-        .card_security_input_btn
-          = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-            = text_field_tag "number", "", class: "number", placeholder: "カード背面の4桁もしくは3桁の数字" ,maxlength: "4", type: "text", id: "card_security"
-        .card_security_description
-          .card_security_description_icon
-            %i.fas.fa-question-circle
-          .card_security_description_text
-            カード裏面の番号とは？
-        .card_security_btn
-          .card_security_btn_jp
-            追加する
-          
+  = render "users/contents"
+  .cards_index
+    .credit_info
+      クレジットカード情報入力
+    .credit_card_number
+      .credit_card_number_info
+        カード番号
+      .credit_card_number_required
+        必須
+      .credit_card_input_btn
+        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
+          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+      .credit_card_logo
+    .credit_card_deadline
+      .credit_card_deadline_info
+        有効期限
+      .credit_card_deadline_required
+        必須
+      .credit_card_deadline_month_year
+        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
+          != sprintf(f.date_select(:expiration_date,with_css_classes:'XXXXX', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
+    .card_security
+      .card_security_number_info
+        セキュリティコード
+      .card_security_number_required
+        必須
+      .card_security_input_btn
+        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
+          = text_field_tag "number", "", class: "number", placeholder: "カード背面の4桁もしくは3桁の数字" ,maxlength: "4", type: "text", id: "card_security"
+      .card_security_description
+        .card_security_description_icon
+          %i.fas.fa-question-circle
+        .card_security_description_text
+          カード裏面の番号とは？
+      .card_security_btn
+        .card_security_btn_jp
+          追加する
+= render "top/footer"

@@ -1,7 +1,6 @@
+= render "top/header"
 .mypage_wrapper
-  .header
-    .header__logo
-  .contents
+  .contents1
     .mypage_nav
       .mypage_nav_item1
         マイページ
@@ -33,7 +32,8 @@
       .mypage_nav_set6
         電話番号の確認
       .mypage_nav_set7
-        ログアウト
+        %a{:href => "/users/:user_id/logoutpage"} ログアウト
+  .contents2
     .mypage_pro
       .pro_ground
         .user-icon
@@ -52,3 +52,4 @@
       .confirmation
         .confirmation_info
           取引中の商品はありません
+= render "top/footer"

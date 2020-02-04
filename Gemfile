@@ -89,3 +89,9 @@ gem 'fog-aws'
 
 # Payjpでクレジットカード登録と削除機能
 gem 'payjp'
+
+# postage/region/shipping_date/status選択のため
+gem 'active_hash'
+
+# category multi layer
+gem 'ancestry'

@@ -59,41 +59,42 @@
           %span.signup-form__group__title__optional
             任意
         = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910" 
+    = f.fields_for :address do |i|
       .signup-form__group
         .signup-form__group__title
-          = f.label :postal_code, class: "signup-form__group__title__label" do
+          = i.label :postal_code, class: "signup-form__group__title__label" do
             郵便番号
           %span.signup-form__group__title__required
             必須
-        = f.text_field :postal_code, class: "signup-form__group__input", placeholder: "例) 1500041" 
+        = i.text_field :postal_code, class: "signup-form__group__input", placeholder: "例) 1500041" 
       .signup-form__group
         .signup-form__group__title
-          = f.label :prefectures, class: "signup-form__group__title__label" do
+          = i.label :prefectures, class: "signup-form__group__title__label" do
             都道府県
           %span.signup-form__group__title__required
             必須
-        = f.text_field :prefectures, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 東京都" 
+        = i.text_field :prefectures, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 東京都" 
       .signup-form__group
         .signup-form__group__title
-          = f.label :municipalities, class: "signup-form__group__title__label" do
+          = i.label :municipalities, class: "signup-form__group__title__label" do
             市区町村
           %span.signup-form__group__title__required
             必須
-        = f.text_field :municipalities, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 渋谷区" 
+        = i.text_field :municipalities, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 渋谷区" 
       .signup-form__group
         .signup-form__group__title
-          = f.label :address, class: "signup-form__group__title__label" do
+          = i.label :address, class: "signup-form__group__title__label" do
             番地
           %span.signup-form__group__title__required
             必須
-        = f.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
+        = i.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
       .signup-form__group
         .signup-form__group__title
-          = f.label :building, class: "signup-form__group__title__label" do
+          = i.label :building, class: "signup-form__group__title__label" do
             番地
           %span.signup-form__group__title__optional
             任意
-        = f.text_field :building, class: "signup-form__group__input", placeholder: "例) フレーム神南坂401" 
+        = i.text_field :building, class: "signup-form__group__input", placeholder: "例) フレーム神南坂401" 
       .signup-form__group
         %p.signup-form__group__notification
           ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, :family_name, :last_name, :family_name_kana, :last_name_kana, :birthday_info, presence: true
   has_one :address, dependent: :destroy
-  
+  accepts_nested_attributes_for :address
 end

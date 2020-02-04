@@ -1,0 +1,118 @@
+= render "top/header"
+.categoryNav
+  %ul.categoryNav__lists
+    %li.categoryNav__lists--object
+      = link_to '#',class:'objectText' do
+        FURIMA
+    %li.categoryNav__lists--object
+      =icon('fas', 'angle-right',class: 'listsSymbol')
+    %li.categoryNav__lists--object
+    = link_to '#',class:'objectText' do
+      ベビー・キッズ
+    %li.categoryNav__lists--object
+      =icon('fas', 'angle-right',class: 'listsSymbol')
+    %li.categoryNav__lists--object
+      = link_to '#',class:'objectText' do
+        ベビー服(男女兼用)  ~95cm
+    %li.categoryNav__lists--object
+      =icon('fas', 'angle-right',class: 'listsSymbol')
+    %li.categoryNav__lists--object
+      = link_to '#',class:'objectText' do
+        アウター
+    %li.categoryNav__lists--object
+      =icon('fas', 'angle-right',class: 'listsSymbol')
+    %li.categoryNav__lists--object
+      product3
+.itemMain
+  .showMain
+    .showMain__item
+      .topContent
+        .showItemBox
+          .showItemBox__name
+            product3
+          .showItemBox__body
+            %ul.showItemBox__body--lists
+              = image_tag 'doi/sakana.png',:size => '560x346', class: 'mainImage'
+            %ul.sideImage
+              %li.sideImage__list
+                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
+              %li.sideImage__list
+                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
+              %li.sideImage__list
+                = image_tag 'doi/kareraisu.png', :size => '140x87', class: 'sideImageObject'
+          .showItemBox__price
+            %span.priceText
+              ¥30000
+            .showItemBox__price--detail
+              (税込み)
+              %span.postageSelect
+                送料込み
+          .itemDetails
+            product3
+          .itemTable
+            %table.itemTable__boby
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  出品者
+                %td.itemTableContents
+                  hoge
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  カテゴリー
+                %td.itemTableContents
+                  = link_to'#' ,class: 'itemTableLinks' do
+                    ベビー・キッズ
+                  %br 
+                  = link_to'#',class: 'itemTableLinks' do
+                    ベビー服(男女兼用)  ~95cm
+                  %br
+                  = link_to'#',class: 'itemTableLinks' do
+                    アウター
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  ブランド
+                %td.itemTableContents
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  商品のサイズ
+                %td.itemTableContents
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  商品の状態
+                %td.itemTableContents
+                  未使用に近い
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  配送料の負担
+                %td.itemTableContents
+                  送料込み（出品者負担）
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  発送元の地域
+                %td.itemTableContents
+                  = link_to'#',class: 'itemTableLinks' do
+                    岩手県
+              %tr.itemTable__boby--link
+                %th.itemTableSubject
+                  発送日の目安
+                %td.itemTableContents
+                  4-7日で発送
+          .optionArea
+            .optionAreaBox
+              %ul.optionAreaBox__left
+                %li.optionAreaBox__left--likeBtn
+                  =icon('fas', 'star',class: 'star-icon-showItem')
+                  お気に入り 0               
+              %ul.optionAreaBox__right
+                = link_to '#',class:'optionAreaBox__right--Btn' do
+                  =icon('fas', 'flag',class: 'flag-icon')
+                  不適切な商品の通報
+        .itemContentBox
+      %ul.linkBanner
+        %li.linkBanner__left
+        %li.linkBanner__right
+      .relatedItems
+
+= render "top/appBanner"
+= render "top/footer"
+= render "top/purchaseBtn"  

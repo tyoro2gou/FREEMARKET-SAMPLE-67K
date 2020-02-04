@@ -26,7 +26,7 @@
             必須
         = f.text_field :name, class: "name-form", placeholder: "商品名（必須40文字まで）"
 
-        = f.label :name, class: "title" do
+        = f.label :description, class: "title" do
           商品の説明
           %span
             必須
@@ -40,13 +40,14 @@
             カテゴリー
             %span
               必須
-          = f.select :category, id: "category"
+          = f.collection_select :category, Category.where(ancestry: nil), :id, :name
+
 
           = f.label :status, class: "title" do
             商品の状態
             %span
               必須
-          = f.select :category, id: "status"
+          = f.collection_select :status, Status.all, :id, :name
 
       .contents__shipping
         %p
@@ -56,19 +57,22 @@
             配送料の負担
             %span
               必須
-          = f.select :postage, id: "postage"
+          = f.collection_select :postage, Postage.all, :id, :name
+
 
           = f.label :region, class: "title" do
             発送元の地域
             %span
               必須
-          = f.select :region, id: "region"
+          = f.collection_select :region, Region.all, :id, :name
+
 
           = f.label :shipping_date, class: "title" do
             発送までの日数
             %span
               必須
-          = f.select :shipping_date, id: "shipping_date"
+          = f.collection_select :shipping_date, ShippingDate.all, :id, :name
+
 
       .contents__price
         %p
@@ -79,11 +83,16 @@
               価格
               %span
                 必須
-            = f.text_field :name, class: "price-form", placeholder: "例）300"
+            %p¥
+            = f.text_field :price, class: "price-form", placeholder: "例）300"
           %p.charge
             販売手数料 (10%)
+            %span
+              ¥30
           %p.profit
             販売利益
+            %span
+              ¥270
       
       .contents__end
         %p

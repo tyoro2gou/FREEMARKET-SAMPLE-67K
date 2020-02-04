@@ -13,5 +13,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-
+  resources :cards, only: [:index, :new, :create]
+  resources :addresses, only: [:new, :create]
 end

@@ -3,8 +3,7 @@
     %h2.single-page__title-text
       会員情報入力
   .single-page__contents
-    = form_with(model: @user, url: user_registration_path, class: "signup-form", local: true) do |f|
-      = devise_error_messages!
+    = form_for :user, url: user_registration_path, class: "signup-form" do |f|
       .signup-form__group
         .signup-form__group__title
           = f.label :nickname, class: "signup-form__group__title__label" do
@@ -58,43 +57,7 @@
             電話番号
           %span.signup-form__group__title__optional
             任意
-        = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910" 
-    = f.fields_for :address do |i|
-      .signup-form__group
-        .signup-form__group__title
-          = i.label :postal_code, class: "signup-form__group__title__label" do
-            郵便番号
-          %span.signup-form__group__title__required
-            必須
-        = i.text_field :postal_code, class: "signup-form__group__input", placeholder: "例) 1500041" 
-      .signup-form__group
-        .signup-form__group__title
-          = i.label :prefectures, class: "signup-form__group__title__label" do
-            都道府県
-          %span.signup-form__group__title__required
-            必須
-        = i.text_field :prefectures, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 東京都" 
-      .signup-form__group
-        .signup-form__group__title
-          = i.label :municipalities, class: "signup-form__group__title__label" do
-            市区町村
-          %span.signup-form__group__title__required
-            必須
-        = i.text_field :municipalities, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 渋谷区" 
-      .signup-form__group
-        .signup-form__group__title
-          = i.label :address, class: "signup-form__group__title__label" do
-            番地
-          %span.signup-form__group__title__required
-            必須
-        = i.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
-      .signup-form__group
-        .signup-form__group__title
-          = i.label :building, class: "signup-form__group__title__label" do
-            番地
-          %span.signup-form__group__title__optional
-            任意
-        = i.text_field :building, class: "signup-form__group__input", placeholder: "例) フレーム神南坂401" 
+        = f.text_field :phone_number, class: "signup-form__group__input", placeholder: "例) 123-4567-8910"  
       .signup-form__group
         %p.signup-form__group__notification
           ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -105,4 +68,4 @@
           に同意したものとみなします。
         .signup-form__group__btn
           = f.submit "新規会員登録", class: "login-panel__address__input-btn"
-    
+      

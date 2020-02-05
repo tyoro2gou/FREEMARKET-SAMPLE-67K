@@ -4,8 +4,9 @@
     .mypage_nav
       .mypage_nav_item1
         マイページ
-      .mypage_nav_item2
-        出品する
+      =link_to new_item_path do
+        .mypage_nav_item2
+          出品する
       .mypage_nav_item3
         出品した商品-出品中
       .mypage_nav_item4 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_04_043155) do
+ActiveRecord::Schema.define(version: 2020_02_05_080034) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -41,20 +41,30 @@ ActiveRecord::Schema.define(version: 2020_02_04_043155) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-  create_table "item_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
     t.bigint "item_id"
-    t.bigint "saler_id"
-    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["buyer_id"], name: "index_item_users_on_buyer_id"
-    t.index ["item_id"], name: "index_item_users_on_item_id"
-    t.index ["saler_id"], name: "index_item_users_on_saler_id"
+    t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", limit: 40, null: false
+    t.text "description", null: false
+    t.integer "status_id", limit: 1, default: 0, null: false
+    t.integer "postage_id", limit: 1, default: 0, null: false
+    t.integer "region_id", limit: 1, default: 0, null: false
+    t.integer "shipping_date_id", limit: 1, default: 0, null: false
+    t.string "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["saler_id"], name: "index_items_on_saler_id"
   end
 
   create_table "test_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,11 +83,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_043155) do
     t.string "last_name_kana", null: false
     t.string "birthday_info", null: false
     t.string "phone_number"
-    t.string "postal_code", null: false
-    t.string "prefectures", null: false
-    t.string "municipalities", null: false
-    t.string "address", null: false
-    t.string "building"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -89,7 +94,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_043155) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
-  add_foreign_key "item_users", "items"
-  add_foreign_key "item_users", "users", column: "buyer_id"
-  add_foreign_key "item_users", "users", column: "saler_id"
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "saler_id"
 end

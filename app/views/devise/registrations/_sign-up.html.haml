@@ -24,9 +24,16 @@
             パスワード
           %span.signup-form__group__title__required
             必須
-        = f.password_field :password, class: "signup-form__group__input", placeholder: "7文字以上の半角英数字"
+        = f.password_field :password, class: "signup-form__group__input", placeholder: "7文字以上の半角英数字", autocomplete: "off" 
         %p.signup-form__group__notification
-          ※ 英字と数字の両方を含めて設定してください
+          ※ パスワードは7文字以上で設定してください
+      .signup-form__group
+        .signup-form__group__title
+          = f.label :password_confirmation, class: "signup-form__group__title__label" do
+            パスワード（確認用）
+          %span.signup-form__group__title__required
+            必須
+        = f.password_field :password_confirmation, class: "signup-form__group__input", autocomplete: "off", placeholder: "7文字以上の半角英数字"
       .signup-form__group
         .signup-form__group__title
           %span.signup-form__group__title__label

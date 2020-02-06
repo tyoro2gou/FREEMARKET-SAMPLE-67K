@@ -1,0 +1,34 @@
+.left-mypage
+  %p.blue
+    マイページ
+  =link_to new_item_path do
+    %p
+      出品する
+  %p
+    出品した商品-出品中
+  %p
+    出品した商品-取引中
+  %p
+    購入した商品-取引中
+  %p
+    購入した商品-過去の取引
+  %p
+    いいね！一覧
+  %p.blue
+    設定
+  %p
+    プロフィール
+  %p
+    発送元・お届け先住所変更
+  %a{:href => "/cards"}
+    %p
+      支払い方法
+  %p
+    メール/パスワード
+  %p
+    本人情報
+  %p
+    電話番号の確認
+  =link_to before_logout_users_path do
+    %p
+      ログアウト

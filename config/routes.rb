@@ -6,13 +6,7 @@ Rails.application.routes.draw do
     get 'logoutpage'
   end
   resources :items, only: [:index, :new, :create, :show]
-  resources :cards, only: [:index, :new, :show] do 
-    collection do
-      post 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#delete'
-    end
-  end
-  resources :cards, only: [:index, :new, :create]
+  resources :cards, only: [:create, :show, :index, :new] 
+  # resources :cards, only: [:index, :new, :create]
   resources :addresses, only: [:new, :create]
 end

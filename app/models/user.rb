@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :nickname, :family_name, :last_name, :family_name_kana, :last_name_kana, :birthday_info, presence: true
   has_one :address, dependent: :destroy
   
+  has_many :items
+  
 end

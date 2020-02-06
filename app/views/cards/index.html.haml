@@ -1,21 +1,4 @@
 = render "top/header"
-.mypage_wrapper
-  = render "users/contents"
-  .cards_index
-    .card_info
-      支払い方法
-    .card_list
-      .card_list_jp
-        クレジットカード一覧
-      .card_btn
-        .card_btn_icon
-          %i.far.fa-credit-card
-        .card_btn_jp
-          %a{:href => "/cards/new"}クレジットカードを追加する
-      .card_line
-      .card_pay_info 
-        支払い方法について
-        .card_pay_icon
-          %i.fas.fa-chevron-right
+= render "users/mypage_mainarea"
 = render "top/footer"
 

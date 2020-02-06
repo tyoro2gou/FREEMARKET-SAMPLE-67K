@@ -10,7 +10,7 @@
     height: auto;
     width: calc(100% - 320px);
     margin-bottom: 40px;
-    // -if @path.is('users#show')
+    // -if @path.is('users#show') / -if @path.is('items#saling_show')
     .profile-img {
       height: 210px;
       width: 100%;
@@ -34,6 +34,47 @@
       text-align: center;
       font-weight: bold;
       line-height: 80px;
+    }
+    .profile-area {
+      height: auto;
+      width: 100%;
+      background-color: $white;
+      padding: 40px 180px;
+      &__box {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid $bordergray;
+        line-height: 50px;
+        margin: 10px 0;
+        display: flex;
+        p {
+          font-weight: bold;
+          margin-left: 20px;
+        }
+      }
+    }
+    // -if @path.is('items#saling_show')
+    // -if @path.is('items#saled_show')
+    .item-box {
+      height: 140px;
+      width: 100%;
+      background-color: $white;
+      padding: 20px 80px;
+      display: flex;
+      position: relative;
+      border-top: 1px solid $bordergray;
+      p {
+        font-weight: bold;
+        line-height: 100px;
+      }
+      &__name {
+        position: absolute;
+        left: 220px;
+      }
+      &__price {
+        position: absolute;
+        right: 80px;
+      }
     }
 
     // if @path.is('users#before_logout')

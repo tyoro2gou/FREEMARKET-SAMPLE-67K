@@ -96,9 +96,7 @@
         .products__head
           = link_to '#', class:'products__head--text' do
             新規投稿商品
-        %ul.products__lists
-          = render "product"
-          
+      = render "products__lists"
     .pickupContainer
       .pcSubtitle
         ピックアップブランド
@@ -106,8 +104,7 @@
         .products__head
           = link_to '#', class:'products__head--text' do
             アーカイブ
-        %ul.products__lists
-          = render "product"
+      = render "products__lists"
   = render "appBanner"
   = render "footer"
   = render "purchaseBtn"

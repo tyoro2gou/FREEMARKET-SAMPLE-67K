@@ -49,17 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_080034) do
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
-  create_table "item_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.bigint "saler_id"
-    t.bigint "buyer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["buyer_id"], name: "index_item_users_on_buyer_id"
-    t.index ["item_id"], name: "index_item_users_on_item_id"
-    t.index ["saler_id"], name: "index_item_users_on_saler_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", limit: 40, null: false
     t.text "description", null: false
@@ -106,9 +95,6 @@ ActiveRecord::Schema.define(version: 2020_02_05_080034) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "item_users", "items"
-  add_foreign_key "item_users", "users", column: "buyer_id"
-  add_foreign_key "item_users", "users", column: "saler_id"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "saler_id"

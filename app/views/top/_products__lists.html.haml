@@ -1,19 +1,20 @@
-%ul.products__lists
+.products__lists
   - @items.zip(@images) do |item, image|
-    = link_to '#', class: 'product' do
-      .product__image
-        = image_tag image.image.url, :size =>'220x150', class:'product__image--pict'
-      .product__info
-        .product__info--name
-          = item.name
-        .product__info--details
-          %ul.detailList
-            %li.detailList__price
-              = item.price
-              円
-            %ul.detailList__box
-              =icon('fas', 'star',class: 'star-icon')
-              %li.count
-                0
-          .tax
-            (税込)
+    = link_to '#', class: 'productGroup' do
+      .product
+        .product__image
+          = image_tag image.image.url, :size =>'220x150', class:'product__image--pict'
+        .product__info
+          .product__info--name
+            = item.name
+          .product__info--details
+            %ul.detailList
+              %li.detailList__price
+                = item.price
+                円
+              %ul.detailList__box
+                =icon('fas', 'star',class: 'star-icon')
+                %li.count
+                  0
+            .tax
+              (税込)

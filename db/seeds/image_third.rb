@@ -1,0 +1,1 @@
+Image.create(:image => open("#{Rails.root}/db/fixtures/ladys02.jpg"), :item_id =>'4')

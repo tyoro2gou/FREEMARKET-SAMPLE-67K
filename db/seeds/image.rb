@@ -1,7 +1,1 @@
-Image.create(:image => open("#{Rails.root}/db/fixtures/topps02.jpg"), :item_id =>'1')
-Image.create(:image => open("#{Rails.root}/db/fixtures/topps01.jpg"), :item_id =>'2')
-Image.create(:image => open("#{Rails.root}/db/fixtures/ladys01.jpg"), :item_id =>'3')
-Image.create(:image => open("#{Rails.root}/db/fixtures/ladys02.jpg"), :item_id =>'4')
-Image.create(:image => open("#{Rails.root}/db/fixtures/ladys03.jpg"), :item_id =>'5')
-Image.create(:image => open("#{Rails.root}/db/fixtures/topps02.jpg"), :item_id =>'6')
-Image.create(:image => open("#{Rails.root}/db/fixtures/topps01.jpg"), :item_id =>'7')
+Image.create(:image => open("#{Rails.root}/db/fixtures/topps01.jpg"), :item_id =>'1')

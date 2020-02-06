@@ -1,0 +1,69 @@
+.single-wrapper
+  %header.single-header
+    = link_to "#" do
+      = image_tag "logo/logo.png", size: '185x49', class: "single-header__logo"
+  .single-main  
+    .single-page
+      .single-page__title
+        %h2.single-page__title-text
+          会員情報入力
+      .single-page__contents
+        = form_for :address, url: addresses_path, html: {class: 'signup-form'} do |f|
+          .signup-form__group
+            .signup-form__group__title
+              = f.label :postal_code, class: "signup-form__group__title__label" do
+                郵便番号
+              %span.signup-form__group__title__required
+                必須
+            = f.text_field :postal_code, class: "signup-form__group__input", placeholder: "例) 1500041" 
+          .signup-form__group
+            .signup-form__group__title
+              = f.label :prefectures, class: "signup-form__group__title__label" do
+                都道府県
+              %span.signup-form__group__title__required
+                必須
+            = f.text_field :prefectures, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 東京都" 
+          .signup-form__group
+            .signup-form__group__title
+              = f.label :municipalities, class: "signup-form__group__title__label" do
+                市区町村
+              %span.signup-form__group__title__required
+                必須
+            = f.text_field :municipalities, class: "signup-form__group__input signup-form__group__input__half", placeholder: "例) 渋谷区" 
+          .signup-form__group
+            .signup-form__group__title
+              = f.label :address, class: "signup-form__group__title__label" do
+                番地
+              %span.signup-form__group__title__required
+                必須
+            = f.text_field :address, class: "signup-form__group__input", placeholder: "例) 神南１丁目１８−２" 
+          .signup-form__group
+            .signup-form__group__title
+              = f.label :building, class: "signup-form__group__title__label" do
+                番地
+              %span.signup-form__group__title__optional
+                任意
+            = f.text_field :building, class: "signup-form__group__input", placeholder: "例) フレーム神南坂401"
+          .signup-form__group
+            %p.signup-form__group__notification
+              ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .signup-form__group
+            %p.signup-form__group__text
+              以下のボタンを押すことにより、                                                   
+              = link_to "利用規約", "#", class: "signup-form__group__text__link"
+              に同意したものとみなします。
+            .signup-form__group__btn
+              = f.submit "新規会員登録", class: "login-panel__address__input-btn"     
+  %footer.single-footer
+    %ul.single-footer__policies
+      %li< 
+        = link_to "プライバシーポリシー", "#"
+      %li< 
+        = link_to "FURIMA利用規約", "#"
+      %li< 
+        = link_to "特定商取引に関する表記", "#"
+    .single-footer__inc
+      = link_to "#" do
+        = image_tag "logo/logo-white.png", size: '185x49', class: "single-footer__inc-logo"
+      %p.single-footer__inc-text
+        %small ©︎ FRIMA.inc

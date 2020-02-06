@@ -4,11 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :request_path
 
-  #新規登録後の画面遷移
-  def after_sign_up_path_for(resource)
-    user_path(resource.id)
-  end
-
   #ログイン後の画面遷移
   def after_sign_in_path_for(resource)
     user_path(resource.id)

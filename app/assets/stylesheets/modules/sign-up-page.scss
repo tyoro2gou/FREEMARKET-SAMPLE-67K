@@ -2,6 +2,9 @@
 .signup-form{
   width: 343px;
   margin: 0 auto;
+  &__error{
+    color: $red;
+  }
   &__group{
     text-align: left;
     margin-top: 32px;

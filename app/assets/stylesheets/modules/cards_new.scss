@@ -1,23 +1,16 @@
 .wrapper-mypage{
-  background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
-  font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+  padding: 40px 230px 0;
 }
-  .side_content{
-    width: 320px;
-    height: 620px;
-    background-color: yellow;
-    margin: 40px 0 40px 230px;
-  }
   .main_content{
     width: 700px;
     background-color:$white;
-    margin: 40px 230px 50px 40px;
+    margin-bottom: 40px;
 
     .content__title{
       height: 50px;
-      border-bottom: 2px solid #f5f5f5;
+      border-bottom: 2px solid $backgroundGray;
       line-height: 50px;
       font-size: 24px;
       text-align: center;
@@ -25,7 +18,7 @@
   .content__credit-card{
   
     .content__credit-card__inner{
-      padding: 40px 200px 40px;
+      padding: 40px 180px 40px;
       span{
         background:$red;
         color: $white;
@@ -40,13 +33,13 @@
         width: 343px;
         padding: 10px 16px 8px;
         border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
+        border: 1px solid$itemTableBackground-Border;
+        background:$white;
         line-height: 1.5;
         font-size: 16px;
       }
       .cards-expire{
-        margin: auto;
+        margin-bottom: 5px;
         .card_img{
           background-image: image-url("logo/all-cards.jpg");
           background-size: cover;
@@ -66,7 +59,7 @@
             width: 170px;
             padding: 100px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $itemTableBackground-Border;
             background: 0;
             font-size: 16px;
             line-height: 1.5;
@@ -75,15 +68,15 @@
         }
       }
       .content-bottom#card_token{
-        margin-top: 30px;
+        margin-top: 60px;
         font-weight: 600;
         .content-bottom#card_token_icon{
           width: 20px;
           height: 20px;
           color: $blue;
           position: absolute;
-          right: 36.5%;
-          top: 595px;
+          right: 38.5%;
+          top: 596px;
           font-size: 14px;
         }
         .content-bottom#card_token_text{
@@ -91,8 +84,8 @@
           height: 20px;
           color: $blue;
           position: absolute;
-          right: 23%;
-          top: 594px;
+          right: 25%;
+          top: 595px;
           font-size: 14px;
         }
 

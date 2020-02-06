@@ -1,15 +1,18 @@
 .wrapper-itemsale
+
   %header
     = link_to "#" do
       = image_tag "logo/logo.png", size: '185x49', class: "header__logo"
-  
+
 
   .contents
     .contents__title
       商品の情報を入力
-    = form_with(local: true) do |f|
+
+    = form_for @item, url: items_path do |f|
+
+      -# 野村さん担当エリア
       .contents__upload
-        -# = devise_error_messages!
         = f.label :image, class: "title" do
           出品画像
           %span
@@ -17,9 +20,10 @@
         %p
           最大10枚までアップロードできます
         .upload-area
-      
+      -# 野村さん担当エリア
+
+
       .contents__information
-        -# = devise_error_messages!
         = f.label :name, class: "title" do
           商品名
           %span
@@ -31,47 +35,47 @@
           %span
             必須
         = f.text_area :description, class: "description-form", placeholder: "商品の説明（必須1000文字以内）　例）2010年頃に1万円で購入したジャケットです。ライトグレイで傷はありません。合わせやすいのでおすすめです。"
-      
+
+
       .contents__details
         %p
           商品の詳細
         .right-box
-          = f.label :category, class: "title" do
+          = f.label :category_id, class: "title" do
             カテゴリー
             %span
               必須
-          = f.collection_select :category, Category.where(ancestry: nil), :id, :name
+          -# = f.select :category_id, Category.where(ancestry: nil).map { |category| [category.name, category.id] }
+          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
 
-
-          = f.label :status, class: "title" do
+          = f.label :status_id, class: "title" do
             商品の状態
             %span
               必須
-          = f.collection_select :status, Status.all, :id, :name
+          = f.collection_select :status_id, Status.all, :id, :name
+
 
       .contents__shipping
         %p
           配送について
         .right-box
-          = f.label :postage, class: "title" do
+          = f.label :postage_id, class: "title" do
             配送料の負担
             %span
               必須
-          = f.collection_select :postage, Postage.all, :id, :name
+          = f.collection_select :postage_id, Postage.all, :id, :name
 
-
-          = f.label :region, class: "title" do
+          = f.label :region_id, class: "title" do
             発送元の地域
             %span
               必須
-          = f.collection_select :region, Region.all, :id, :name
+          = f.collection_select :region_id, Region.all, :id, :name
 
-
-          = f.label :shipping_date, class: "title" do
+          = f.label :shipping_date_id, class: "title" do
             発送までの日数
             %span
               必須
-          = f.collection_select :shipping_date, ShippingDate.all, :id, :name
+          = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
 
 
       .contents__price
@@ -93,7 +97,8 @@
             販売利益
             %span
               ¥270
-      
+
+
       .contents__end
         %p
           禁止されている出品、行為を必ずご確認ください。
@@ -108,11 +113,11 @@
 
   %footer.single-footer
     %ul.single-footer__policies
-      %li< 
+      %li<
         = link_to "プライバシーポリシー", "#"
-      %li< 
+      %li<
         = link_to "FURIMA利用規約", "#"
-      %li< 
+      %li<
         = link_to "特定商取引に関する表記", "#"
     .single-footer__inc
       = link_to "#" do

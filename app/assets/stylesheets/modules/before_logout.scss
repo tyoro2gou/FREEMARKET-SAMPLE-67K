@@ -1,0 +1,16 @@
+.wrapper-mypage {
+  height: auto;
+  width: 100%;
+  background-color: $backgroundGray;
+  padding: 40px 230px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .btn-area {
+    height: 1000px;
+    width: calc(100% - 320px);
+    background-color: blue;
+    margin-bottom: 40px;
+    
+  }
+}

@@ -20,6 +20,20 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def saling_show
+    @user = User.find(current_user.id)
+    @items = Item.where(saler_id: current_user.id)
+    @images = Image.where(item_id: @items.ids)
+    # binding.pry
+  end
+
+  def saled_show
+    @user = User.find(current_user.id)
+    @items = Item.where(buyer_id: current_user.id)
+    @images = Image.where(item_id: @items.ids)
+  end
+
+
   private
   def move_to_top
     redirect_to root_path unless user_signed_in?

@@ -1,40 +1,36 @@
 = render "top/header"
-.mypage_wrapper
-  = render "users/contents"
-  .cards_index
-    .credit_info
-      クレジットカード情報入力
-    .credit_card_number
-      .credit_card_number_info
-        カード番号
-      .credit_card_number_required
-        必須
-      .credit_card_input_btn
-        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-      .credit_card_logo
-    .credit_card_deadline
-      .credit_card_deadline_info
-        有効期限
-      .credit_card_deadline_required
-        必須
-      .credit_card_deadline_month_year
-        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-          != sprintf(f.date_select(:expiration_date,with_css_classes:'XXXXX', order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
-    .card_security
-      .card_security_number_info
-        セキュリティコード
-      .card_security_number_required
-        必須
-      .card_security_input_btn
-        = form_with(model: @cards, url: "#", class: "#", local: true) do |f|
-          = text_field_tag "number", "", class: "number", placeholder: "カード背面の4桁もしくは3桁の数字" ,maxlength: "4", type: "text", id: "card_security"
-      .card_security_description
-        .card_security_description_icon
-          %i.fas.fa-question-circle
-        .card_security_description_text
-          カード裏面の番号とは？
-      .card_security_btn
-        .card_security_btn_jp
-          = submit_tag "追加する", id: "token_submit"
+.wrapper-mypage
+  = render "users/mypage_leftbox"
+  .main_content
+    .content__title
+      %h2 クレジットカード情報入力
+    .content__credit-card
+      .content__credit-card__inner
+        = form_with url: cards_path, method: :post, html: { name: "inputForm" } do |f| 
+          = f.label :カード番号, class: 'label'
+          %span 必須
+          = f.text_field :card_number, type: 'text', class: 'input-number', placeholder: '半角数字のみ', maxlength: "16"
+          .cards-expire
+            .card_img
+            = f.label :有効期限, class: 'label'
+            %span 必須
+            %br
+            .cards-expire__wrap
+              = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , class: 'input-expire'
+              %span.expire-text 月
+              %br
+            .cards-expire__wrap
+              = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'input-expire'
+              %span.expire-text 年
+          .cards-expire
+            = f.label :セキュリティコード, class: 'label'
+            %span 必須
+            = f.text_field :cvc, type: 'text', class: 'input-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
+          .content-bottom#card_token
+            .content-bottom#card_token_icon
+              %i.far.fa-question-circle
+            .content-bottom#card_token_text
+              カード裏面の番号とは？
+            = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
 = render "top/footer"
+

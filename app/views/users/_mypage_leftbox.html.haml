@@ -1,0 +1,32 @@
+.left-mypage
+  %p.blue
+    マイページ
+  =link_to new_item_path do
+    %p
+      出品する
+  =link_to saling_show_items_path do
+    %p
+      出品した商品-出品中
+  %p
+    出品した商品-取引中
+  %p
+    購入した商品-取引中
+  =link_to saled_show_items_path do
+    %p
+      購入した商品-過去の取引
+  %p
+    いいね！一覧
+  %p.blue
+    設定
+  %p
+    プロフィール
+  %p
+    発送元・お届け先住所変更
+  = link_to cards_path, method: :get do
+    %p
+      支払い方法
+  %p
+    プロフィール編集
+  =link_to before_logout_users_path do
+    %p
+      ログアウト

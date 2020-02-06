@@ -1,0 +1,127 @@
+.wrapper-mypage {
+  height: auto;
+  width: 100%;
+  background-color: $backgroundGray;
+  padding: 40px 230px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .right-mypage {
+    height: auto;
+    width: calc(100% - 320px);
+    margin-bottom: 40px;
+    // -if @path.is('users#show') / -if @path.is('items#saling_show')
+    .profile-img {
+      height: 210px;
+      width: 100%;
+      background-image: image-url("pict/IMG_1843-768x576.jpg");
+      text-align: center;
+      padding-top: 50px;
+      .icon {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+    .title {
+      height: 80px;
+      width: 100%;
+      background-color: $mainBlue;
+      text-align: center;
+      font-weight: bold;
+      line-height: 80px;
+    }
+    .profile-area {
+      height: auto;
+      width: 100%;
+      background-color: $white;
+      padding: 40px 180px;
+      &__box {
+        height: 50px;
+        width: 100%;
+        border-bottom: 1px solid $bordergray;
+        line-height: 50px;
+        margin: 10px 0;
+        display: flex;
+        p {
+          font-weight: bold;
+          margin-left: 20px;
+        }
+      }
+    }
+    // -if @path.is('items#saling_show')
+    // -if @path.is('items#saled_show')
+    .item-box {
+      height: 140px;
+      width: 100%;
+      background-color: $white;
+      padding: 20px 80px;
+      display: flex;
+      position: relative;
+      border-top: 1px solid $bordergray;
+      p {
+        font-weight: bold;
+        line-height: 100px;
+      }
+      &__name {
+        position: absolute;
+        left: 220px;
+      }
+      &__price {
+        position: absolute;
+        right: 80px;
+      }
+    }
+
+    // if @path.is('users#before_logout')
+    .btn-box {
+      height: 210px;
+      width: 100%;
+      background-color: $white;
+      padding: 80px;
+      p {
+        height: 50px;
+        width: 280px;
+        background-color: red;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 50px;
+        color: $white;
+      }
+    }
+
+    // -if @path.is('cards#index')
+    p.title {
+      height: 50px;
+      width: 100%;
+      background-color: $mainBlue;
+      text-align: center;
+      line-height: 50px;
+      font: $white;
+    }
+    .card-list {
+      height: auto;
+      width: 100%;
+      background-color: $white;
+      padding: 64px;
+      p.subtitle {
+        font-weight: bold;
+        margin-bottom: 24px;
+        text-align: center;
+      }
+      p.btn {
+        height: 50px;
+        width: 280px;
+        background-color: red;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 50px;
+        color: $white;
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@
         %h2.single-page__title-text
           会員情報入力
       .single-page__contents
-        = form_for :address, url: addresses_path, class: "signup-form" do |f|
+        = form_for :address, url: addresses_path, html: {class: 'signup-form'} do |f|
           .signup-form__group
             .signup-form__group__title
               = f.label :postal_code, class: "signup-form__group__title__label" do

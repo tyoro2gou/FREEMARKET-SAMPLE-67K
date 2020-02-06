@@ -1,0 +1,26 @@
+.wrapper-mypage
+  = render "users/mypage_leftbox"
+  .right-mypage
+    -if @path.is('users#show')
+      .profile-img
+        = image_tag "pict/16_2_302.png", alt: "profile image icon", class: "icon"
+        %p
+          user name
+      .title
+        プロフィール
+
+    -if @path.is('users#before_logout')
+      .btn-box
+        =link_to destroy_user_session_path do
+          %p
+            ログアウト
+    
+    -if @path.is('cards#index')
+      %p.title
+        支払い方法
+      .card-list
+        %p.subtitle
+          クレジットカード一覧
+        =link_to new_card_path do
+          %p.btn
+            クレジットカードを追加する

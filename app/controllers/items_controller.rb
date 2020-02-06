@@ -20,6 +20,13 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def saling_show
+  end
+
+  def saled_show
+  end
+
+
   private
   def move_to_top
     redirect_to root_path unless user_signed_in?

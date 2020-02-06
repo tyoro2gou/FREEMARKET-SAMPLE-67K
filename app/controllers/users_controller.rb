@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  def logoutpage
+  def before_logout
   end
  
 end

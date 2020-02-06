@@ -5,13 +5,37 @@
       .profile-img
         = image_tag "pict/16_2_302.png", alt: "profile image icon", class: "icon"
         %p
-          user name
+          = @user.family_name
+          = @user.last_name
       .title
         プロフィール
+      .profile-area
+        .profile-area__box
+          ニックネーム：
+          %p
+            = @user.nickname
+        .profile-area__box
+          ふりがな：
+          %p
+            = @user.family_name_kana
+            = @user.last_name_kana
+        .profile-area__box
+          誕生日：
+          %p
+            = @user.birthday_info
+        .profile-area__box
+          e-mail：
+          %p
+            = @user. email
+        .profile-area__box
+          電話番号：
+          %p
+            = @user.phone_number
+
 
     -if @path.is('users#before_logout')
       .btn-box
-        =link_to destroy_user_session_path do
+        =link_to destroy_user_session_path, method: :delete do
           %p
             ログアウト
     
@@ -24,3 +48,38 @@
         =link_to new_card_path do
           %p.btn
             クレジットカードを追加する
+    
+    -if @path.is('items#saling_show')
+      .profile-img
+        = image_tag "pict/16_2_302.png", alt: "profile image icon", class: "icon"
+        %p
+          = @user.family_name
+          = @user.last_name
+      .title
+        出品中の商品 - 出品中
+      - @items.zip(@images) do |item, image|
+        .item-box
+          = image_tag image.image.url
+          %p.item-box__name
+            = item.name
+          %p.item-box__price
+            ¥
+            = item.price
+
+    -if @path.is('items#saled_show')
+      .profile-img
+        = image_tag "pict/16_2_302.png", alt: "profile image icon", class: "icon"
+        %p
+          = @user.family_name
+          = @user.last_name
+      .title
+        購入した商品 - 過去の取引
+      - @items.zip(@images) do |item, image|
+        .item-box
+          = image_tag image.image.url
+          %p.item-box__name
+            = item.name
+          %p.item-box__price
+            ¥
+            = item.price
+

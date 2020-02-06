@@ -3,7 +3,13 @@
     %h2.single-page__title-text
       会員情報入力
   .single-page__contents
-    = form_for :user, url: user_registration_path, class: "signup-form" do |f|
+    = form_for :user, url: user_registration_path, html: {class: 'signup-form'} do |f|
+      - if @user.errors.any?
+        .signup-form__error
+          %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @user.errors.full_messages.each do |message|
+              %li= message
       .signup-form__group
         .signup-form__group__title
           = f.label :nickname, class: "signup-form__group__title__label" do

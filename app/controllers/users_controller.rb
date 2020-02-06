@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  def logoutpage
+  def before_logout
   end
 
   # Payjp.api_key = PAYJP_SECRET_KEY = 'sk_test_fc909327daf398b939d901a1'

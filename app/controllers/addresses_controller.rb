@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :set_current_address, only: [:edit, :update]
+
   def new
     @address = Address.new
   end
@@ -10,11 +12,9 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    @address = Address.find_by(user_id: current_user.id)
   end
 
   def update
-    @address = Address.find_by(user_id: current_user.id)
     if @address.update(address_params)
       redirect_to user_path(current_user.id)
     else
@@ -23,6 +23,10 @@ class AddressesController < ApplicationController
   end
 
   private
+
+  def set_current_address
+    @address = Address.find_by(user_id: current_user.id)
+  end
 
   def address_params
     params.require(:address).permit(:postal_code, :prefectures, :municipalities, :address, :building).merge(user_id: current_user.id)

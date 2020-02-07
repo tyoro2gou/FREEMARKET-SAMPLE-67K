@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-  before_action :move_to_show, only: :destroy
+  # before_action :move_to_show, only: :destroy
+  before_action :set_current_user, only: [:show, :edit, :update]
+
   def show
-    @user = User.find(current_user.id)
     @address = Address.find_by(user_id: current_user.id)
   end
 
   def edit
-    @user = User.find(current_user.id)
   end
 
   def update
-    @user = User.find(current_user.id)
     if @user.update(user_params)
       redirect_to user_path(current_user.id)
     else
@@ -24,6 +23,10 @@ class UsersController < ApplicationController
 
 
   private
+
+  def set_current_user
+    @user = User.find(current_user.id)
+  end
 
   def user_params
     params.require(:user).permit(:nickname, :email, :family_name, :last_name, :family_name_kana, :last_name_kana, :phone_number)

@@ -29,11 +29,20 @@
     }
     .content__credit-cards__list{
       margin: 20px 35px 0 0;
+      &__list{
+        font-weight: 600;
+      }
       .content__credit-cards__list--pay-num1{
         margin: 10px;
+        &__list--pay-num1{
+          font-weight: 600;
+        }
       }
       .content__credit-cards__list--pay-num2{
         margin-right: 70px;
+        &__list--pay-num2{
+          font-weight: 600;
+        }
       }
       .content__credit-cards__list__remove{
         padding: 4px 6px;
@@ -46,6 +55,9 @@
         right: 30%;
         top: 42%;
         cursor: pointer;
+        &__list__remove{
+          font-weight: 300;
+        }
       } 
     }
   }

@@ -21,13 +21,15 @@
   =link_to user_path(current_user.id) do
     %p
       プロフィール
-  %p
-    発送元・お届け先住所変更
   = link_to cards_path, method: :get do
     %p
       支払い方法
-  %p
-    プロフィール編集
+  =link_to edit_user_path(current_user.id) do
+    %p
+      プロフィール編集
+  =link_to edit_address_path(current_user.id) do
+    %p
+      住所編集
   =link_to before_logout_users_path do
     %p
       ログアウト

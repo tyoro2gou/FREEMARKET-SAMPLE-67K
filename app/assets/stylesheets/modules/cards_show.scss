@@ -1,0 +1,76 @@
+.contents{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 230px 0;
+  background-color:$backgroundGray;
+  .card_contents{
+    width: 700px;
+    height: 318px;
+    background-color:$white;
+    margin-bottom: 40px;    
+    
+  .content__title{
+    height: 50px;
+    border-bottom: 2px solid $backgroundGray;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    h2{
+      font-weight: 600;
+    }
+  }
+  .content__credit-cards{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 80px 150px 0 0;
+    font-weight: 300;
+    h3{
+      font-weight: 600;
+    }
+    .content__credit-cards__list{
+      margin: 20px 35px 0 0;
+      .content__credit-cards__list--pay-num1{
+        margin: 10px;
+      }
+      .content__credit-cards__list--pay-num2{
+        margin-right: 70px;
+      }
+      .content__credit-cards__list__remove{
+        padding: 4px 6px;
+        background: $white;
+        border-radius: 3px;
+        border: 1px solid $red;
+        color: $red;
+        font-size: 14px;
+        position: absolute;
+        right: 30%;
+        top: 42%;
+        cursor: pointer;
+      } 
+    }
+  }
+  .under_contents{
+    border-top: 2px solid $backgroundGray;
+    width: 500px;
+    height: 100px;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    .under_contents_text{
+      position: absolute;
+      top: 30%;
+      left: 70%;
+      color: $blue;
+      font-size: 14px;
+    }
+    .under_contents_icon{
+      position: absolute;
+      top: 28%;
+      right: 1%;
+      color: $blue;
+      font-size: 20px;
+    }
+  }
+}
+}

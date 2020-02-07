@@ -33,10 +33,21 @@ class CardsController < ApplicationController
     end
   end
 
+  def destroy 
+    Payjp.api_key = "sk_test_fc909327daf398b939d901a1"
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    customer.delete
+    if @card.destroy 
+      redirect_to action: "index", notice: "削除しました"
+    else 
+      redirect_to action: "index", alert: "削除できませんでした"
+    end
+  end
+
 
   private
 
   def set_card
-    # @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 end

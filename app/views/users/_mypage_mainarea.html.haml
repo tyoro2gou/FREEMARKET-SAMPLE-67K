@@ -31,7 +31,17 @@
           電話番号：
           %p
             = @user.phone_number
-
+        .profile-area__box
+          郵便番号：
+          %p
+            = @address.postal_code
+        .profile-area__box
+          住所：
+          %p
+            = @address.prefectures
+            = @address.municipalities
+            = @address.address
+            = @address.building
 
     -if @path.is('users#before_logout')
       .btn-box

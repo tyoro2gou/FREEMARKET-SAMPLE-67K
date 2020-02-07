@@ -6,13 +6,11 @@
     text-align: center;
     padding-top: 40px;
   }
-
   .contents{
     height: auto;
     width: 700px;
     background-color: $white;
     margin: 0 auto;
-
     &__title{
       height: 97px;
       width: 100%;
@@ -22,13 +20,11 @@
       font-size: 22px;
       font-weight: bold;
     }
-
     &__upload{
       height: auto;
       width: 100%;
       padding: 40px;
       border-bottom: 1px solid $backgroundGray;
-
       .title {
         font-weight: bold;
         span {
@@ -40,12 +36,10 @@
           color: $white;
         }
       }
-
       p {
         font-size: 14px;
         margin: 8px 0 10px 0;
       }
-
       .upload-area {
         height: 162px;
         width: 100%;
@@ -53,18 +47,15 @@
         border: 1px dashed $lightGray;
         padding: 40px;
       }
-
     }
     &__information {
       height: auto;
       width: 100%;
       padding: 40px;
       border-bottom: 1px solid $backgroundGray;
-
       .title {
         font-size: 14px;
         font-weight: bold;
-
         span {
           font-size: 0.75rem;
           background-color: $red;
@@ -74,7 +65,6 @@
           color: $white;
         }
       }
-
       .name-form {
         height: 48px;
         width: 100%;
@@ -83,7 +73,6 @@
         border-radius: 4px;
         border: 1px solid $lightGray;
       }
-
       .title {
         font-size: 14px;
         font-weight: bold;
@@ -96,7 +85,6 @@
           color: $white;
         }
       }
-
       .description-form {
         height: 142px;
         width: 100%;
@@ -104,7 +92,6 @@
         padding: 10px 16px 8px;
         border: 1px solid $lightGray;
       }
-
     }
     &__details {
       height: auto;
@@ -113,17 +100,14 @@
       border-bottom: 1px solid $backgroundGray;
       display: flex;
       justify-content: space-between;
-
       p {
         font-size: 14px;
         font-weight: bold;
         color: $fontGray;
       }
-
       .right-box {
         height: 180px;
         width: 400px;
-
         .title {
           font-size: 14px;
           font-weight: bold;
@@ -136,7 +120,6 @@
             color: $white;
           }
         }
-
         select {
           height: 48px;
           width: 100%;
@@ -144,11 +127,9 @@
           border: 1px solid $lightGray;
           margin-top: 8px;
         }
-
         select#item_category_id {
           margin-bottom: 40px;
         }
-
       }
     }
     &__shipping {
@@ -158,17 +139,14 @@
       border-bottom: 1px solid $backgroundGray;
       display: flex;
       justify-content: space-between;
-
       p {
         font-size: 14px;
         font-weight: bold;
         color: $fontGray;
       }
-
       .right-box {
         height: auto;
         width: 400px;
-
         .title {
           font-size: 14px;
           font-weight: bold;
@@ -180,9 +158,7 @@
             margin-left: 8px;
             color: $white;
           }
-
         }
-
         select {
           height: 48px;
           width: 100%;
@@ -190,11 +166,9 @@
           border: 1px solid $lightGray;
           margin-top: 8px;
         }
-
         select#item_postage_id,#item_region_id {
           margin-bottom: 40px;
         }
-
       }
     }
     &__price {
@@ -204,24 +178,20 @@
       border-bottom: 1px solid $backgroundGray;
       display: flex;
       justify-content: space-between;
-
       p {
         font-size: 14px;
         font-weight: bold;
         color: $fontGray;
       }
-
       .right-box {
         height: auto;
         width: 400px;
-
         &__upper {
           height: auto;
           width: 100%;
           padding-bottom: 24px;
           display: flex;
           position: relative;
-
           .title {
             font-size: 14px;
             font-weight: bold;
@@ -235,13 +205,11 @@
               color: $white;
             }
           }
-
           p {
             line-height: 48px;
             position: absolute;
             right: 170px;
           }
-
           .price-form {
             height: 48px;
             width: 160px;
@@ -253,55 +221,46 @@
             position: absolute;
             right: 0;
           }
-
         }
-
         .charge {
           height: 63px;
           width: 100%;
           line-height: 63px;
-          border-top: 1px solid $lightGray;
-          border-bottom: 1px solid $lightGray;
+          border-top: 1px solid $red;
+          border-bottom: 1px solid $red;
           font-size: 14px;
-          font-weight: normal;
-          display: flex;
-          justify-content: space-between;
+          font-weight: bold;
+          text-align: right;
         }
-
-        .profit {
-          font-size: 1rem;
-          height: 83px;
-          width: 100%;
-          padding: 24px 0;
-          display: flex;
-          justify-content: space-between;
-          span {
-            font-size: 1.25rem;
-            font-weight: bold;
-          }
-        }
-
+        // .profit {
+        //   font-size: 1rem;
+        //   height: 83px;
+        //   width: 100%;
+        //   padding: 24px 0;
+        //   display: flex;
+        //   justify-content: space-between;
+        //   span {
+        //     font-size: 1.25rem;
+        //     font-weight: bold;
+        //   }
+        // }
       }
     }
-
     &__end {
       height: auto;
       width: 100%;
       padding: 40px;
-
       p {
         font-size: 14px;
       }
-
       .sale-btn {
         height: 50px;
         width: 100%;
         line-height: 50px;
-        background-color: $red;
+        background-color: $mainBlue;
         color: $white;
         margin-top: 40px;
       }
-
       .back-btn {
         display: block;
         height: 50px;
@@ -312,22 +271,18 @@
         color: $white;
         margin: 24px 170px;
       }
-
     }
-
   }
   .single-footer{
     width: 456px;
     height: 220px;
     margin: 0 auto;
     padding: 40px 0;
-
     &__policies{
       display: flex;
       font-size: 12px;
       display: flex;
       justify-content: space-evenly;
-
       li{
         a{
           color: $fontGray;
@@ -335,15 +290,11 @@
         }
       }
     }
-
     &__inc{
       text-align: center;
       &-logo{
         margin-top: 40px;
       }
-
     }
-
   }
-  
 }

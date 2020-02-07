@@ -6,14 +6,24 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
   end
 
   def update
+    @user = User.find(current_user.id)
+    @user.update(user_params)
+    redirect_to user_path(current_user.id)
   end
 
   def before_logout
   end
 
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :family_name, :last_name, :family_name_kana, :last_name_kana, :phone_number)
+  end
 
 
   # Payjp.api_key = PAYJP_SECRET_KEY = 'sk_test_fc909327daf398b939d901a1'

@@ -18,8 +18,9 @@
     いいね！一覧
   %p.blue
     設定
-  %p
-    プロフィール
+  =link_to user_path(current_user.id) do
+    %p
+      プロフィール
   %p
     発送元・お届け先住所変更
   = link_to cards_path, method: :get do

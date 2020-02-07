@@ -3,9 +3,11 @@
   = render "users/mypage_leftbox"
   .card_contents
     .content__title
-      %h2 支払い方法
+      .content__title__text
+        支払い方法
     .content__credit-cards
-      %h3 クレジットカード一覧
+      .content__credit-cards__text
+        クレジットカード一覧
       - if @card.present?
         %ul.content__credit-cards__list
           %li
@@ -25,7 +27,7 @@
                 .alert.alert-dange
                 = flash[:alert]
     .under_contents
-      .under_contents_text
+      .under_contents__text
         支払い方法について
       .under_contents_icon
         %i.fas.fa-angle-right

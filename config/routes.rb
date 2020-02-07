@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'top#index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :top, only: [:new, :create]
-  resources :users, only: :show do
+  resources :users, only: [:show, :edit, :update] do
     collection do
       get 'before_logout'
     end
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:create, :show, :index, :new] 
-  resources :addresses, only: [:new, :create]
+  resources :addresses, only: [:new, :create, :edit, :update]
 end

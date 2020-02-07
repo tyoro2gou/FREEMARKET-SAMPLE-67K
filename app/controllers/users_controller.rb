@@ -11,9 +11,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    @user.update(user_params)
-    redirect_to user_path(current_user.id)
+    if @user.update(user_params)
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to edit_user_path(current_user.id)
+    end
   end
+
 
   def before_logout
   end

@@ -1,3 +1,1 @@
-
-Item.create(:name => 'テスト',:description => 'testtest',:status_id => "3" ,:postage_id => '2' ,:region_id => '4' ,:shipping_date_id => '2',:price => '3000',:category_id =>'3',:saler_id => '1',:buyer_id => "")
-Item.create(:name => 'テスト',:description => 'testtest',:status_id => '2' ,:postage_id => '2' ,:region_id => '4' ,:shipping_date_id => '2',:price => '3000',:category_id =>'3',:saler_id => '1',:buyer_id => "")
+Item.create(:name => 'テスト1',:description => 'testtest1',:status_id => "3" ,:postage_id => '2' ,:region_id => '4' ,:shipping_date_id => '2',:price => '3000',:category_id =>'3',:saler_id => '1',:buyer_id => "")

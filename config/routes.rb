@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       get 'saled_show'
     end
   end
-  resources :cards, only: [:create, :show, :index, :new] 
+  resources :cards, only: [:create, :show, :index, :new]
   resources :addresses, only: [:new, :create, :edit, :update]
 end

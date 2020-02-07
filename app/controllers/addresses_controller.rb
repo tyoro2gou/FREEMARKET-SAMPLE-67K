@@ -9,6 +9,12 @@ class AddressesController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def address_params

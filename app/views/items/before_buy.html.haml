@@ -10,18 +10,18 @@
       .single-page__beforeBy
         .buy-item
           .buy-item__info
-            = image_tag @image.image.url, size: '80x80', class: "buy-item__info__image"
+            = image_tag @images.image.url, size: '80x80', class: "buy-item__info__image"
             .buy-item__info__detail
               %p.buy-item__info__detail-name
-                = @item.name 
+                = @items.name 
               %p.buy-item__info__detail-price
-                = "￥#{@item.price}（税込）送料込み"
+                = "￥#{@items.price}（税込）送料込み"
         .buy-contents
           .buy-contemts__price.clearfix
             %span.buy-contents__price--heading
               支払い金額
             %span.buy-contents__price--value
-              ¥5,000
+              = "￥#{@items.price}"
           .buy-contents__payment
             .buy-contents__payment--box.clearfix
               %p.buy-contents__payment--heading
@@ -40,15 +40,15 @@
             %p.buy-contents__userInfo--heading
               配送先
             %p.buy-contents__userInfo--detail
-              = "〒#{@address.postal_code}"
+              = "〒#{@addresses.postal_code}"
               %br
-              = @address.prefectures
-              = @address.municipalities
-              = @address.address
-              = @address.building
+              = @addresses.prefectures
+              = @addresses.municipalities
+              = @addresses.address
+              = @addresses.building
               %br
-              = @user.family_name
-              = @user.last_name
+              = current_user.family_name
+              = current_user.last_name
           %button{type: "submit", class: "buy-contents__submit"}
             購入する
 

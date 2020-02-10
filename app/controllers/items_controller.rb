@@ -34,12 +34,10 @@ class ItemsController < ApplicationController
   end
 
   def before_buy
-    @item = Item.find(params[:id])
-    @image = Image.find_by(item_id: @item.id)
-    @address = Address.find_by(user_id: current_user.id)
-    @card = Card.where(user_id: current_user.id)
-    @user = User.find(current_user.id)
-    
+    @items = Item.find(params[:id])
+    @images = Image.find_by(item_id: @items.id)
+    @addresses = Address.find_by(user_id: current_user.id)
+    @cards = Card.where(user_id: current_user.id)
   end
 
 

@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def children_category
+    @children = Category.find(params[:parent_id]).children
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save

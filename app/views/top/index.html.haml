@@ -96,55 +96,7 @@
         .products__head
           = link_to '#', class:'products__head--text' do
             新規投稿商品
-        %ul.products__lists
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/sakana.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product1
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    30000円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/gyouza.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product3
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    1000000000円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/kareraisu.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product2
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    １円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
+      = render "products__lists"
     .pickupContainer
       .pcSubtitle
         ピックアップブランド
@@ -152,55 +104,7 @@
         .products__head
           = link_to '#', class:'products__head--text' do
             アーカイブ
-        %ul.products__lists
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/sakana.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product1
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    30000円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/gyouza.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product3
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    1000000000円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
-          = link_to '#', class: 'product' do
-            .product__image
-              = image_tag 'doi/kareraisu.png', :size =>'220x150', class:'product__image--pict'
-            .product__info
-              .product__info--name
-                product2
-              .product__info--details
-                %ul.detailList
-                  %li.detailList__price
-                    １円
-                  %ul.detailList__box
-                    =icon('fas', 'star',class: 'star-icon')
-                    %li.count
-                      0
-                .tax
-                  (税込)
+      = render "products__lists"
   = render "appBanner"
   = render "footer"
   = render "purchaseBtn"

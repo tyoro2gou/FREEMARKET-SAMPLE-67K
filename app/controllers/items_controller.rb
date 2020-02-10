@@ -22,9 +22,8 @@ class ItemsController < ApplicationController
 
   def saling_show
     @user = User.find(current_user.id)
-    @items = Item.where(saler_id: current_user.id)
+    @items = Item.where(saler_id: current_user.id, buyer_id: nil)
     @images = Image.where(item_id: @items.ids)
-    # binding.pry
   end
 
   def saled_show

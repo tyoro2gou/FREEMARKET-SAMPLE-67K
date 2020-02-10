@@ -12,6 +12,11 @@ Rails.application.routes.draw do
       get 'saling_show'
       get 'saled_show'
     end
+    member do
+      get 'before_buy'
+    end
+
+
   end
 
   resources :cards, only: [:create, :show, :index, :new, :destroy] do

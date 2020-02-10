@@ -5,6 +5,7 @@
 }
   .main_content{
     width: 700px;
+    height: 650px;
     background-color:$white;
     margin-bottom: 40px;
 
@@ -39,10 +40,11 @@
         font-size: 16px;
       }
       .cards-expire{
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         .card_img{
           background-image: image-url("logo/all-cards.jpg");
           background-size: cover;
+          margin-bottom: 10px;
           height: 36px;
           width: 360px;
         }
@@ -76,7 +78,7 @@
           color: $blue;
           position: absolute;
           right: 38.5%;
-          top: 596px;
+          top: 611px;
           font-size: 14px;
         }
         .content-bottom#card_token_text{
@@ -85,11 +87,12 @@
           color: $blue;
           position: absolute;
           right: 25%;
-          top: 595px;
+          top: 610px;
           font-size: 14px;
         }
 
         .content-bottom--add-btn{
+          margin-top: 10px;
           background: $red;
           border: 1px solid $red;
           color: $white;

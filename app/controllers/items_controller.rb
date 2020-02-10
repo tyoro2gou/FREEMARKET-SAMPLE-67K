@@ -33,6 +33,15 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @items.ids)
   end
 
+  def before_buy
+    @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: @item.id)
+    @address = Address.find_by(user_id: current_user.id)
+    @card = Card.where(user_id: current_user.id)
+    @user = User.find(current_user.id)
+    
+  end
+
 
   private
   def move_to_top

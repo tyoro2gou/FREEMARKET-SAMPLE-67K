@@ -1,0 +1,72 @@
+.single-wrapper
+  %header.single-header
+    = link_to "#" do
+      = image_tag "logo/logo.png", size: '185x49', class: "single-header__logo"
+  .single-main  
+    .single-page
+      .single-page__title
+        %h2.single-page__title-text
+          購入内容の確認
+      .single-page__beforeBy
+        .buy-item
+          .buy-item__info
+            = image_tag @image.image.url, size: '80x80', class: "buy-item__info__image"
+            .buy-item__info__detail
+              %p.buy-item__info__detail-name
+                = @item.name 
+              %p.buy-item__info__detail-price
+                = "￥#{@item.price}（税込）送料込み"
+        .buy-contents
+          .buy-contemts__price.clearfix
+            %span.buy-contents__price--heading
+              支払い金額
+            %span.buy-contents__price--value
+              ¥5,000
+          .buy-contents__payment
+            .buy-contents__payment--box.clearfix
+              %p.buy-contents__payment--heading
+                支払い方法
+              = link_to "#", class: "buy-contents__payment--edit" do
+                変更する
+            .buy-contents__payment--card
+              %p.buy-contents__payment--card__info
+                クレジットカード
+                %br
+                ************1234
+                %br
+                有効期限01/01
+
+          .buy-contents__userInfo
+            %p.buy-contents__userInfo--heading
+              配送先
+            %p.buy-contents__userInfo--detail
+              = "〒#{@address.postal_code}"
+              %br
+              = @address.prefectures
+              = @address.municipalities
+              = @address.address
+              = @address.building
+              %br
+              = @user.family_name
+              = @user.last_name
+          %button{type: "submit", class: "buy-contents__submit"}
+            購入する
+
+
+          
+        
+  %footer.single-footer
+    %ul.single-footer__policies
+      %li< 
+        = link_to "プライバシーポリシー", "#"
+      %li< 
+        = link_to "FURIMA利用規約", "#"
+      %li< 
+        = link_to "特定商取引に関する表記", "#"
+    .single-footer__inc
+      = link_to "#" do
+        = image_tag "logo/logo-white.png", size: '185x49', class: "single-footer__inc-logo"
+      %p.single-footer__inc-text
+        %small ©︎ FRIMA.inc
+
+

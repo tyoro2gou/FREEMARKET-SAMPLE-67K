@@ -55,7 +55,7 @@
       .card-list
         %p.subtitle
           クレジットカード一覧
-        =link_to new_card_path do
+        =link_to new_card_path, data: {"turbolinks" => false} do
           %p.btn
             クレジットカードを追加する
     

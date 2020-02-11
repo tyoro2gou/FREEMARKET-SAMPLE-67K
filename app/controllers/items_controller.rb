@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :move_to_top
+  before_action :move_to_top, except: :show
   before_action :set_item, only: [:before_buy, :buy]
+  
   def index
   end
 
@@ -23,6 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:saler).find(params[:id])
+    @images = @item.images
   end
 
   def saling_show
@@ -58,9 +61,9 @@ class ItemsController < ApplicationController
 
 
   private
-  def move_to_top
-    redirect_to root_path unless user_signed_in?
-  end
+   def move_to_top
+     redirect_to root_path unless user_signed_in?
+   end
 
   def set_item
     @item = Item.find(params[:id])

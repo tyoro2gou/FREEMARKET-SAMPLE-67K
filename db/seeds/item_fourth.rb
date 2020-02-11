@@ -1,0 +1,1 @@
+Item.create(:name => 'テスト5',:description => 'testtest5',:status_id => "2" ,:postage_id => '3' ,:region_id => '5' ,:shipping_date_id => '3',:price => '5000',:category_id =>'2',:saler_id => '2',:buyer_id => "3")

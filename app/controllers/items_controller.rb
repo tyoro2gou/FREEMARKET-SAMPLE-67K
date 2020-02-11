@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_top
+  before_action :move_to_top, except: :show
 
   def index
   end
@@ -18,12 +18,15 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.includes(:saler).find(params[:id])
+    @images = Image.where(item_id: @item.id)
+    # binding.pry
   end
 
   def saling_show
     @user = User.find(current_user.id)
     @items = Item.where(saler_id: current_user.id)
-    @images = Image.where(item_id: @items.ids)
+    @image = Image.where(item_id: @items.ids)
     # binding.pry
   end
 

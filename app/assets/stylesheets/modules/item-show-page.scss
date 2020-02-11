@@ -198,6 +198,27 @@
             z-index: 2;
           }
         }
+        .consoleBox {
+          margin-top: 15px;
+        }
+        .itemEdit-Purchase:hover {
+          opacity: 0.50;
+        }
+        .itemEdit-Purchase {
+          margin: 0 auto;
+          font-size: 18px;
+          line-height: 48px;
+          background: $mainBlue;
+          border: 1px solid $mainBlue;
+          color: $white;
+          width: 60%;
+          font-size: 18px;
+          border-radius: 100px;
+          cursor: pointer;
+          &__btn {
+            color: #fff;
+          }
+        }
       }
     }
     .linkBanner {

@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
-    @items = Item.all.order("created_at DESC").limit(3)
+    @items = Item.where(buyer_id: nil).order("created_at DESC").limit(3)
     @images = Image.order("created_at DESC").where(item_id: @items.ids)
   end
 

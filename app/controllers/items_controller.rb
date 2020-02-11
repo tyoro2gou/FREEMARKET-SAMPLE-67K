@@ -19,15 +19,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.includes(:saler).find(params[:id])
-    @images = Image.where(item_id: @item.id)
-    # binding.pry
+    @images = @item.images
   end
 
   def saling_show
     @user = User.find(current_user.id)
     @items = Item.where(saler_id: current_user.id)
-    @image = Image.where(item_id: @items.ids)
-    # binding.pry
+    @images = Image.where(item_id: @items.ids)
   end
 
   def saled_show

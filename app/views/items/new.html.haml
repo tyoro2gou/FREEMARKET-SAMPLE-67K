@@ -46,12 +46,12 @@
         %p
           商品の詳細
         .right-box
-          = f.label :category_id, class: "title" do
-            カテゴリー
-            %span
-              必須
-          -# = f.select :category_id, Category.where(ancestry: nil).map { |category| [category.name, category.id] }
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
+          .category-box
+            = f.label :category_id, class: "title" do
+              カテゴリー
+              %span
+                必須
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
           = f.label :status_id, class: "title" do
             商品の状態
             %span

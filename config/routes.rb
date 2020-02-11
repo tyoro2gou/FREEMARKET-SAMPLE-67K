@@ -11,7 +11,13 @@ Rails.application.routes.draw do
     collection do
       get 'saling_show'
       get 'saled_show'
+      get 'children_category', defaults: { format: 'json' }
     end
+    member do
+      get 'before_buy'
+    end
+
+
   end
 
   resources :cards, only: [:create, :show, :index, :new, :destroy] do

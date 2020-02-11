@@ -175,8 +175,11 @@
         color: $fontGray;
       }
       .right-box {
-        height: 180px;
+        height: auto;
         width: 400px;
+        .category-box {
+          margin-bottom: 40px;
+        }
         .title {
           font-size: 14px;
           font-weight: bold;
@@ -195,9 +198,6 @@
           border-radius: 4px;
           border: 1px solid $lightGray;
           margin-top: 8px;
-        }
-        select#item_category_id {
-          margin-bottom: 40px;
         }
       }
     }

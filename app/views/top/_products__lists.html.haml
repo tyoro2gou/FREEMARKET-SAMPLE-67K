@@ -1,6 +1,6 @@
 .products__lists
   - @items.zip(@images) do |item, image|
-    = link_to '#', class: 'productGroup' do
+    = link_to item_path(item.id), class: 'productGroup' do
       .product
         .product__image
           = image_tag image.image.url, :size =>'220x150', class:'product__image--pict'

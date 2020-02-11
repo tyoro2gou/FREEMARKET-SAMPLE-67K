@@ -30,17 +30,11 @@
         .showItemBox
           .showItemBox__name
             = @item.name
-          .showItemBox__body
-            %ul.showItemBox__body--lists
-              - @images.each do |image|
-                = image_tag image.image.url,:size => '560x346', class: 'mainImage'
-            %ul.sideImage
-              %li.sideImage__list
-                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
-              %li.sideImage__list
-                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
-              %li.sideImage__list
-                = image_tag 'doi/kareraisu.png', :size => '140x87', class: 'sideImageObject'
+          - mainimg = @images [0]
+          = image_tag mainimg.image.url ,:size => '560x346',class:'mainImage'
+          - subimgs = @images.drop(1)
+          - subimgs.each do |subimg|
+            = image_tag subimg.image.url,:size => '140x87',class:'sideImage'
           .showItemBox__price
             %span.priceText
               =@item.price

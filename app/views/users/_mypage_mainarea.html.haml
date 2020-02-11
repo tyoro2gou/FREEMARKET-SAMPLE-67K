@@ -31,7 +31,17 @@
           電話番号：
           %p
             = @user.phone_number
-
+        .profile-area__box
+          郵便番号：
+          %p
+            = @address.postal_code
+        .profile-area__box
+          住所：
+          %p
+            = @address.prefectures
+            = @address.municipalities
+            = @address.address
+            = @address.building
 
     -if @path.is('users#before_logout')
       .btn-box
@@ -45,7 +55,7 @@
       .card-list
         %p.subtitle
           クレジットカード一覧
-        =link_to new_card_path do
+        =link_to new_card_path, data: {"turbolinks" => false} do
           %p.btn
             クレジットカードを追加する
     
@@ -82,4 +92,106 @@
           %p.item-box__price
             ¥
             = item.price
+
+    -if @path.is('users#edit')
+      %p.title
+        プロフィールを編集する
+      = form_with(model: @user, url: user_path(current_user.id), method: :patch, class: 'useredit-form', local: true) do |f|
+        - if @user.errors.any?
+          .error
+            %h2= "#{@user.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @user.errors.full_messages.each do |message|
+                %li= message
+
+        = f.label :nickname, class: "form-label" do
+          ニックネーム
+        %p
+          必須
+        = f.text_field :nickname, class: "text", placeholder: "例) フリマ太郎"
+
+        = f.label :email, class: "form-label" do
+          メールアドレス
+        %p
+          必須
+        = f.text_field :email, class: "text", placeholder: "PC・携帯どちらでも可"
+
+        = f.label :family_name, class: "form-label" do
+          姓 (全角)
+        %p
+          必須
+        = f.text_field :family_name, class: "text", placeholder: "例）山田"
+
+        = f.label :last_name, class: "form-label" do
+          名 (全角)
+        %p
+          必須
+        = f.text_field :last_name, class: "text", placeholder: "例）綾"
+
+        = f.label :family_name_kana, class: "form-label" do
+          姓 (カナ)
+        %p
+          必須
+        = f.text_field :family_name_kana, class: "text", placeholder: "例）ヤマダ"
+
+        = f.label :last_name_kana, class: "form-label" do
+          名 (カナ)
+        %p
+          必須
+        = f.text_field :last_name_kana, class: "text", placeholder: "例）アヤ"
+
+        = f.label :phone_number, class: "form-label" do
+          電話番号
+        %p.gray
+          任意
+        = f.text_field :phone_number, class: "text", placeholder: "例）123-4567-8910"
+
+        = f.submit "プロフィールを更新する", class: "update-btn"
+
+    
+    -if @path.is('addresses#edit')
+      %p.title
+        住所を編集する
+      = form_with(model: @address, url: address_path(@address.id), method: :patch, class: 'addressedit-form', local: true) do |f|
+        - if @address.errors.any?
+          .error
+            %h2= "#{@address.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @address.errors.full_messages.each do |message|
+                %li= message
+
+        = f.label :postal_code, class: "form-label" do
+          郵便番号
+        %p
+          必須
+        = f.text_field :postal_code, class: "text", placeholder: "例) 1500041"
+
+        = f.label :prefectures, class: "form-label" do
+          都道府県
+        %p
+          必須
+        = f.text_field :prefectures, class: "text", placeholder: "例) 東京都"
+
+        = f.label :municipalities, class: "form-label" do
+          市区町村
+        %p
+          必須
+        = f.text_field :municipalities, class: "text", placeholder: "例) 渋谷区"
+
+        = f.label :address, class: "form-label" do
+          番地
+        %p
+          必須
+        = f.text_field :address, class: "text", placeholder: "例) 神南１丁目１８−２"
+
+        = f.label :building, class: "form-label" do
+          建物名など
+        %p.gray
+          任意
+        = f.text_field :building, class: "text", placeholder: "例) フレーム神南坂401"
+
+        = f.submit "住所を更新する", class: "update-btn"
+
+
+
 

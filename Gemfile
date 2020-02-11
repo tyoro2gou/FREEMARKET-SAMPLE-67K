@@ -101,4 +101,4 @@ gem 'active_hash'
 gem 'ancestry'
 
 
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'

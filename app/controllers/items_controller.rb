@@ -9,6 +9,10 @@ class ItemsController < ApplicationController
     @images = @item.images.build
   end
 
+  def children_category
+    @children = Category.find(params[:parent_id]).children
+  end
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -32,6 +36,16 @@ class ItemsController < ApplicationController
     @items = Item.where(buyer_id: current_user.id)
     @images = Image.where(item_id: @items.ids)
   end
+
+
+  def before_buy
+    @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: @item.id)
+    @address = Address.find_by(user_id: current_user.id)
+    @cards = Card.where(user_id: current_user.id)
+  end
+
+
 
   private
   def move_to_top

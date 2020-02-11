@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
-    @items = Item.where(buyer_id: nil).order("created_at DESC").limit(3)
-    @images = Image.order("created_at DESC").where(item_id: @items.ids)
+    @items = Item.all.order("created_at DESC").limit(3)
+    @images = Image.where(item_id: @items.ids).order("created_at DESC")
   end
 
   def new

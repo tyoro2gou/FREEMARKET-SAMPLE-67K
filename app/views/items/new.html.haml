@@ -5,25 +5,32 @@
       = image_tag "logo/logo.png", size: '185x49', class: "header__logo"
 
 
-  .contents
-    .contents__title
-      商品の情報を入力
-
+  .sale-form
+    -# .contents__title
+    -#   商品の情報を入力
     = form_for @item, url: items_path do |f|
-
       -# 野村さん担当エリア
-      .contents__upload
+      .sale-form__upload
         = f.label :image, class: "title" do
           出品画像
           %span
             必須
         %p
-          最大10枚までアップロードできます
+          最大5枚までアップロードできます
         .upload-area
-      -# 野村さん担当エリア
-
-
-      .contents__information
+          .post__drop__box__container
+            .prev-content
+            .label-content
+              %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+            .hidden-content
+              %script{:src => "item_new.js", :type => "text/javascript"}
+              = f.fields_for :images do |i|
+                = i.file_field :image, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+      .sale-form__information
         = f.label :name, class: "title" do
           商品名
           %span
@@ -35,27 +42,24 @@
           %span
             必須
         = f.text_area :description, class: "description-form", placeholder: "商品の説明（必須1000文字以内）　例）2010年頃に1万円で購入したジャケットです。ライトグレイで傷はありません。合わせやすいのでおすすめです。"
-
-
-      .contents__details
+      
+      .sale-form__details
         %p
           商品の詳細
         .right-box
-          = f.label :category_id, class: "title" do
-            カテゴリー
-            %span
-              必須
-          -# = f.select :category_id, Category.where(ancestry: nil).map { |category| [category.name, category.id] }
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
-
+          .category-box
+            = f.label :category_id, class: "title" do
+              カテゴリー
+              %span
+                必須
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
           = f.label :status_id, class: "title" do
             商品の状態
             %span
               必須
           = f.collection_select :status_id, Status.all, :id, :name
 
-
-      .contents__shipping
+      .sale-form__shipping
         %p
           配送について
         .right-box
@@ -64,21 +68,18 @@
             %span
               必須
           = f.collection_select :postage_id, Postage.all, :id, :name
-
           = f.label :region_id, class: "title" do
             発送元の地域
             %span
               必須
           = f.collection_select :region_id, Region.all, :id, :name
-
           = f.label :shipping_date_id, class: "title" do
             発送までの日数
             %span
               必須
           = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
 
-
-      .contents__price
+      .sale-form__price
         %p
           販売価格( 300 ~ 9,999,999 )
         .right-box
@@ -90,26 +91,23 @@
             %p¥
             = f.text_field :price, class: "price-form", placeholder: "例）300"
           %p.charge
-            販売手数料 (10%)
-            %span
-              ¥30
-          %p.profit
-            販売利益
-            %span
-              ¥270
+            販売手数料は10%です。
+          -#   %span
+          -#     ¥30
+          -# %p.profit
+          -#   販売利益
+          -#   %span
+          -#     ¥270
 
-
-      .contents__end
+      .sale-form__end
         %p
           禁止されている出品、行為を必ずご確認ください。
           %br
           またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
           %br
           また、出品をもちまして加盟店規約に同意したことになります
-
         = f.submit "出品する", class: "sale-btn"
         = link_to "もどる", :back, class: "back-btn"
-
 
   %footer.single-footer
     %ul.single-footer__policies
@@ -124,3 +122,9 @@
         = image_tag "logo/logo-white.png", size: '185x49', class: "single-footer__inc-logo"
       %p.single-footer__inc-text
         %small ©︎ FRIMA.inc
+
+
+
+
+
+

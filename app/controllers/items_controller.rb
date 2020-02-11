@@ -6,6 +6,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @images = @item.images.build
+  end
+
+  def children_category
+    @children = Category.find(params[:parent_id]).children
   end
 
   def create
@@ -25,9 +30,8 @@ class ItemsController < ApplicationController
 
   def saling_show
     @user = User.find(current_user.id)
-    @items = Item.where(saler_id: current_user.id)
-    @image = Image.where(item_id: @items.ids)
-    # binding.pry
+    @items = Item.where(saler_id: current_user.id, buyer_id: nil)
+    @images = Image.where(item_id: @items.ids)
   end
 
   def saled_show
@@ -37,12 +41,22 @@ class ItemsController < ApplicationController
   end
 
 
+  def before_buy
+    @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: @item.id)
+    @address = Address.find_by(user_id: current_user.id)
+    @cards = Card.where(user_id: current_user.id)
+  end
+
+
+
   private
    def move_to_top
      redirect_to root_path unless user_signed_in?
    end
 
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price).merge(saler_id: current_user.id)
+
+    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 end

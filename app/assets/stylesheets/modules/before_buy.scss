@@ -59,15 +59,10 @@
       font-weight: bold;
       float: left;
     }
-    &--edit{
-      font-size: 14px;
-      color: $blue;
-      float: right;
-    }
     &--card{
       text-align: left;
       margin-top: 5px;
-      &__info{
+      &{
         font-size: 14px;
       }
     }

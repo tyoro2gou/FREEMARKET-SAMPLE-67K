@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_top
-
+  before_action :set_item, only: [:before_buy, :buy]
   def index
   end
 
@@ -39,10 +39,20 @@ class ItemsController < ApplicationController
 
 
   def before_buy
-    @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
     @address = Address.find_by(user_id: current_user.id)
-    @cards = Card.where(user_id: current_user.id)
+    @card = Card.find_by(user_id: current_user.id)
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @card_information = customer.cards.retrieve(@card.card_id)
+  end
+
+  def buy
+    @item.buyer_id = current_user.id
+    if @item.save
+      redirect_to user_path
+    else
+      redirect_to item_path(@item.id)
+    end
   end
 
 
@@ -50,6 +60,10 @@ class ItemsController < ApplicationController
   private
   def move_to_top
     redirect_to root_path unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def item_params

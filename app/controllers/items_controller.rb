@@ -36,7 +36,19 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @image = Image.find_by(item_id: @item.id)
     @address = Address.find_by(user_id: current_user.id)
-    @cards = Card.where(user_id: current_user.id)
+    @card = Card.find_by(user_id: current_user.id)
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @card_information = customer.cards.retrieve(@card.card_id)
+  end
+
+  def buy
+    @item = Item.find(params[:id])
+    @item.buyer_id = current_user.id
+    if @item.save
+      redirect_to user_path
+    else
+      redirect_to item_path(@item.id)
+    end
   end
 
 

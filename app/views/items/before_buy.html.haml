@@ -26,16 +26,17 @@
             .buy-contents__payment--box.clearfix
               %p.buy-contents__payment--heading
                 支払い方法
-              = link_to "#", class: "buy-contents__payment--edit" do
-                変更する
             .buy-contents__payment--card
-              %p.buy-contents__payment--card__info
-                クレジットカード
-                %br
-                ************1234
-                %br
-                有効期限01/01
-
+              - if @card.present?
+                %ul.buy-contents__payment--card__list
+                  %li
+                    = form_with url: card_path(@card.id), method: :delete, local: true, id: 'charge-form' do |f|
+                      .buy-contents__payment--card__list--pay-num1
+                        = "**** **** **** " + @card_information.last4
+                      .buy-contents__payment--card__list--pay-num2
+                        - exp_month = @card_information.exp_month.to_s
+                        - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                        = exp_month + " / " + exp_year
           .buy-contents__userInfo
             %p.buy-contents__userInfo--heading
               配送先
@@ -51,11 +52,9 @@
               = current_user.last_name
           = form_tag(action: :pay, method: :post) do
             %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_8a02eb526da8e8fce8bd4e8c"}
-    
+          = link_to buy_item_path, class:"buy-contents__submit", method: "POST" do
+            購入する
 
-
-          
-        
   %footer.single-footer
     %ul.single-footer__policies
       %li< 

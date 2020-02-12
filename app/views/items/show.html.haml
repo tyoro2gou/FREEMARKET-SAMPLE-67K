@@ -29,45 +29,35 @@
       .topContent
         .showItemBox
           .showItemBox__name
-            product3
-          .showItemBox__body
-            %ul.showItemBox__body--lists
-              = image_tag 'doi/sakana.png',:size => '560x346', class: 'mainImage'
-            %ul.sideImage
-              %li.sideImage__list
-                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
-              %li.sideImage__list
-                = image_tag 'doi/sakana.png', :size => '140x87', class: 'sideImageObject'
-              %li.sideImage__list
-                = image_tag 'doi/kareraisu.png', :size => '140x87', class: 'sideImageObject'
+            = @item.name
+          - mainimg = @images [0]
+          = image_tag mainimg.image.url ,:size => '560x346',class:'mainImage'
+          - subimgs = @images.drop(1)
+          - subimgs.each do |subimg|
+            = image_tag subimg.image.url,:size => '140x87',class:'sideImage'
           .showItemBox__price
             %span.priceText
-              ¥30000
+              =@item.price
+              円
             .showItemBox__price--detail
               (税込み)
               %span.postageSelect
-                送料込み
+                =@item.postage.name
           .itemDetails
-            product3
+            = @item.name
           .itemTable
             %table.itemTable__boby
               %tr.itemTable__boby--link
                 %th.itemTableSubject
                   出品者
                 %td.itemTableContents
-                  hoge
+                  = @item.saler.nickname
               %tr.itemTable__boby--link
                 %th.itemTableSubject
                   カテゴリー
                 %td.itemTableContents
                   = link_to'#' ,class: 'itemTableLinks' do
-                    ベビー・キッズ
-                  %br 
-                  = link_to'#',class: 'itemTableLinks' do
-                    ベビー服(男女兼用)  ~95cm
-                  %br
-                  = link_to'#',class: 'itemTableLinks' do
-                    アウター
+                    = @item.category.name
               %tr.itemTable__boby--link
                 %th.itemTableSubject
                   ブランド
@@ -80,7 +70,7 @@
                 %th.itemTableSubject
                   商品の状態
                 %td.itemTableContents
-                  未使用に近い
+                  = @item.status.name
               %tr.itemTable__boby--link
                 %th.itemTableSubject
                   配送料の負担
@@ -91,12 +81,12 @@
                   発送元の地域
                 %td.itemTableContents
                   = link_to'#',class: 'itemTableLinks' do
-                    岩手県
+                    = @item.region.name
               %tr.itemTable__boby--link
                 %th.itemTableSubject
                   発送日の目安
                 %td.itemTableContents
-                  4-7日で発送
+                  = @item.shipping_date.name
           .optionArea
             .optionAreaBox
               %ul.optionAreaBox__left
@@ -107,16 +97,7 @@
                 = link_to '#',class:'optionAreaBox__right--Btn' do
                   =icon('fas', 'flag',class: 'flag-icon')
                   不適切な商品の通報
-        .itemContentBox
-          = form_with url: root_path do |f|
-            = f.text_area :name, class: "commentBox"
-            .itemContentBox__noticeMessage
-              相手のことを考え丁寧なコメントを心がけましょう。
-              %br
-              不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            .itemContentBox__btnBox
-              =icon('fas', 'comment',class: 'comment-icon')
-              = f.submit "コメントする",class: "commentbtn"
+        = render "itemContentBox"          
       %ul.linkBanner
         %li.linkBanner__left
           = link_to '#',class: "pageBtn" do

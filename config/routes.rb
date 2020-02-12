@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'before_buy'
-      post 'buy'
+      # post 'buy'
     end
 
 

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require 'payjp'
   before_action :move_to_top
   before_action :move_to_top, except: :show
-  before_action :set_item, only: [:before_buy, :buy]
+  before_action :set_item, only: [:before_buy, :pay]
 
 
 
@@ -48,20 +48,16 @@ class ItemsController < ApplicationController
     @card_information = customer.cards.retrieve(@card.card_id)
   end
 
-  def buy
-    @item.buyer_id = current_user.id
-    if @item.save
-      redirect_to user_path
-    else
-      redirect_to item_path(@item.id)
-    end
-  end
-
-  def index
-  end
+  # def buy
+  #   @item.buyer_id = current_user.id
+  #   if @item.save
+  #     redirect_to user_path(current_user.id)
+  #   else
+  #     redirect_to item_path(@item.id)
+  #   end
+  # end
 
   def pay
-    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -69,8 +65,10 @@ class ItemsController < ApplicationController
     customer: card.customer_id,
     card: params['payjp-token'],
     currency:'jpy', 
-  )
-  redirect_to root_path
+    )
+    @item.buyer_id = current_user.id
+    @item.save
+    redirect_to user_path(current_user.id)
   end
 
   

@@ -5,7 +5,9 @@ describe Item do
     it "is valid with a name, description, status_id, postage_id, region_id, shipping_date_id, price" do
       user = create(:user)
       category = create(:category)
-      item = build(:item, saler_id: user.id, category_id: category.id)
+      item = FactoryBot.build(:item, saler_id: user.id, category_id: category.id) do |i|
+        i.images.build(FactoryBot.attributes_for(:image))
+      end
       expect(item).to be_valid
     end
 

@@ -64,5 +64,6 @@
         if(id < 5){
           $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
         }
+        
       });
     });

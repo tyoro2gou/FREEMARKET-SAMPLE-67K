@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get 'saling_show'
       get 'saled_show'
       get 'children_category', defaults: { format: 'json' }
+      post 'pay/:id'=>   'items#pay', as: 'pay'
+      get 'index', to: 'items#index'
     end
     member do
       get 'before_buy'

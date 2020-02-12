@@ -15,6 +15,7 @@
                       </div>
                     </div>`
         return html;
+        alert(hello);
       }
       function setLabel() {
         var prevContent = $('.label-content').prev();

@@ -50,10 +50,10 @@
               %br
               = current_user.family_name
               = current_user.last_name
-          = form_tag(action: :pay, method: :post) do
-            %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_8a02eb526da8e8fce8bd4e8c"}
-          = link_to buy_item_path, class:"buy-contents__submit", method: "POST" do
-            購入する
+            = form_tag(action: :pay, method: :post,) do
+              .buy-contents__submit
+                %button 購入する
+            
 
   %footer.single-footer
     %ul.single-footer__policies

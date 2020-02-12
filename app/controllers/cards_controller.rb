@@ -8,8 +8,7 @@ class CardsController < ApplicationController
   end
 
   def create 
-    Payjp.api_key = 'sk_test_fc909327daf398b939d901a1'
-    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to new_card_path
     else
@@ -28,16 +27,14 @@ class CardsController < ApplicationController
 
   def show 
     if @card.present?
-      Payjp.api_key = 'sk_test_fc909327daf398b939d901a1'
-      # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   def destroy 
-    Payjp.api_key = 'sk_test_fc909327daf398b939d901a1'
-    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy 

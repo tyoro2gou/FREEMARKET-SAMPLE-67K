@@ -85,5 +85,7 @@
     @include buttons($white);
     background-color: $mainBlue;
     margin-top: 25px;
+    position: relative;
+    align-items: center;
   }
 }

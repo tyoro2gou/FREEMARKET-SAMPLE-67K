@@ -1,9 +1,23 @@
 class ItemsController < ApplicationController
+  require 'payjp'
+  before_action :move_to_top
   before_action :move_to_top, except: :show
   before_action :set_item, only: [:before_buy, :buy]
-  
-  def index
-  end
+
+    def index
+      card = Card.where(user_id: current_user.id).first
+      #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+      if card.blank?
+        #登録された情報がない場合にカード登録画面に移動
+        redirect_to controller: "card", action: "new"
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        #保管した顧客IDでpayjpから情報取得
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+        @default_card_information = customer.cards.retrieve(card.card_id)
+      end
+    end
 
   def new
     @item = Item.new
@@ -56,19 +70,30 @@ class ItemsController < ApplicationController
     end
   end
 
+  
+
+  def pay
+    @item = Item.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    card: params['payjp-token'],
+    currency: 'jpy'
+    )
+    redirect_to root_path 
+  end
 
 
   private
-   def move_to_top
-     redirect_to root_path unless user_signed_in?
-   end
+
+  def move_to_top
+    redirect_to root_path unless user_signed_in?
 
   def set_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-
-    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :text, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
 end

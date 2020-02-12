@@ -48,14 +48,6 @@ class ItemsController < ApplicationController
     @card_information = customer.cards.retrieve(@card.card_id)
   end
 
-  # def buy
-  #   @item.buyer_id = current_user.id
-  #   if @item.save
-  #     redirect_to user_path(current_user.id)
-  #   else
-  #     redirect_to item_path(@item.id)
-  #   end
-  # end
 
   def pay
     card = Card.where(user_id: current_user.id).first

@@ -8,6 +8,9 @@ FactoryBot.define do
     region_id         {"2"}
     shipping_date_id  {"2"}
     price             {"5000"}
+    category_id       {"2"}
+    saler_id          {"1"}
+    
+    
   end
-
 end

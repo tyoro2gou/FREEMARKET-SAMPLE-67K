@@ -67,14 +67,15 @@
           = @user.last_name
       .title
         出品中の商品 - 出品中
-      - @items.zip(@images) do |item, image|
-        .item-box
-          = image_tag image.image.url
-          %p.item-box__name
-            = item.name
-          %p.item-box__price
-            ¥
-            = item.price
+      - @items.each do |item|
+        =link_to item_path(item.id) do
+          .item-box
+            = image_tag item.images.first.image.url
+            %p.item-box__name
+              = item.name
+            %p.item-box__price
+              ¥
+              = item.price
 
     -if @path.is('items#saled_show')
       .profile-img
@@ -84,14 +85,15 @@
           = @user.last_name
       .title
         購入した商品 - 過去の取引
-      - @items.zip(@images) do |item, image|
-        .item-box
-          = image_tag image.image.url
-          %p.item-box__name
-            = item.name
-          %p.item-box__price
-            ¥
-            = item.price
+      - @items.each do |item|
+        =link_to item_path(item.id) do
+          .item-box
+            = image_tag item.images.first.image.url
+            %p.item-box__name
+              = item.name
+            %p.item-box__price
+              ¥
+              = item.price
 
     -if @path.is('users#edit')
       %p.title

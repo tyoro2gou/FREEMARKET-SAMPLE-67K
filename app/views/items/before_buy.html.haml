@@ -50,8 +50,11 @@
               %br
               = current_user.family_name
               = current_user.last_name
-          = link_to buy_item_path, class:"buy-contents__submit", method: "POST" do
-            購入する
+            = form_tag(action: :pay, method: :post,) do
+              .buy-contents__submit
+                %button 購入する
+            
+
   %footer.single-footer
     %ul.single-footer__policies
       %li< 

@@ -1,9 +1,9 @@
 .products__lists
-  - @items.zip(@images) do |item, image|
+  - @items.each do |item|
     = link_to item_path(item.id), class: 'productGroup' do
       .product
         .product__image
-          = image_tag image.image.url, :size =>'220x150', class:'product__image--pict'
+          = image_tag item.images.first.image.url, :size =>'220x150', class:'product__image--pict'
         .product__info
           .product__info--name
             = item.name

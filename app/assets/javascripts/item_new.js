@@ -12,6 +12,7 @@
                       </div>
                     </div>`
         return html;
+        alert(hello);
       }
       if (window.location.href.match(/\/items\/\d+\/edit/)){
       var prevContent = $('.label-content').prev();
@@ -89,5 +90,6 @@
             $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
           }
         }
+        
       });
     });

@@ -90,12 +90,13 @@
             margin-bottom: 10px;
             width: 620px;
             .label-box {
+              height: 30px;
               display: block;
               border: 1px dashed $itemTableBackground-Border;
               position: relative;
               background:$backgroundGray;
               width: 100%;
-              height: 162px;
+              // height: 162px;
               cursor: pointer;
               &__text-visible {
                 position: absolute;
@@ -365,5 +366,11 @@
         margin-top: 40px;
       }
     }
+  }
+  .hidden-field-edit{
+    display: none;
+  }
+  .hidden-checkbox-edit {
+    display: none;
   }
 }

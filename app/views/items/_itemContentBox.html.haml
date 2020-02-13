@@ -12,7 +12,7 @@
       .consoleBox
       - if @item.saler.id == current_user.id
         .itemEdit-Purchase
-          = link_to "#",class:"itemEdit-Purchase__btn"do
+          = link_to edit_item_path(@item.id),class:"itemEdit-Purchase__btn"do
             編集する
       - else
         .itemEdit-Purchase

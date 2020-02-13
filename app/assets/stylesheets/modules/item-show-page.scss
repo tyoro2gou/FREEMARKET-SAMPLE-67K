@@ -180,10 +180,22 @@
         .consoleBox {
           margin-top: 15px;
         }
-        .itemEdit-Purchase:hover {
-          opacity: 0.50;
+        .itemEdit-Purchase:hover::before {
+          left:0;
+        }
+        .itemEdit-Purchase::before {
+          content:"";
+          position: absolute;
+          top: 0px;
+          left: -500px;
+          height: 100%;
+          width: 100%;
+          background : #fff;
+          opacity: 0.3;
+          transition: .7s;
         }
         .itemEdit-Purchase {
+          position: relative;
           margin: 0 auto;
           font-size: 18px;
           line-height: 48px;
@@ -194,6 +206,8 @@
           font-size: 18px;
           border-radius: 100px;
           cursor: pointer;
+          border:1px solid #fff;
+	        overflow: hidden;
           &__btn {
             color: #fff;
           }

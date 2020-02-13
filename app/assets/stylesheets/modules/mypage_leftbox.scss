@@ -12,11 +12,17 @@
     font-size: 0.75rem;
     color: $fontGray;
     border-bottom: solid 1px $bordergray;
+    transition: .4s;
   }
   p.blue {
     height: 50px;
     background-color: $mainBlue;
     line-height: 50px;
     font-weight: bold;
+  }
+  p.configBox:hover {
+    background-color: darkgray;
+    color: #fff;
+    
   }
 }

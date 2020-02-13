@@ -76,16 +76,19 @@
 
     }
     &--detail{
-      margin-top: 5px;
+      margin-bottom: 50px;
       font-size: 14px;
     }
 
   }
-  &__submit{
+  .buttons{
     @include buttons($white);
     background-color: $mainBlue;
-    margin-top: 25px;
-    position: relative;
+    width: 343px;
     align-items: center;
+    position: absolute;
+    left: 39%;
+    bottom: 10%;
   }
+  
 }

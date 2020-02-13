@@ -22,8 +22,11 @@
     %p
       プロフィール
   = link_to cards_path, method: :get do
-    %p
-      支払い方法
+    %p 
+      クレジットカード登録
+  = link_to card_path(current_user.id) do
+    %p 
+      クレジットカード編集   
   =link_to edit_user_path(current_user.id) do
     %p
       プロフィール編集

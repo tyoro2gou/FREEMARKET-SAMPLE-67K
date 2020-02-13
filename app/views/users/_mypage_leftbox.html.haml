@@ -2,10 +2,10 @@
   %p.blue
     マイページ
   =link_to new_item_path do
-    %p
+    %p.configBox
       出品する
   =link_to saling_show_items_path do
-    %p
+    %p.configBox
       出品した商品-出品中
   %p
     出品した商品-取引中
@@ -19,20 +19,20 @@
   %p.blue
     設定
   =link_to user_path(current_user.id) do
-    %p
+    %p.configBox
       プロフィール
   = link_to cards_path, method: :get do
-    %p 
+    %p.configBox
       クレジットカード登録
   = link_to card_path(current_user.id) do
-    %p 
+    %p.configBox
       クレジットカード編集   
   =link_to edit_user_path(current_user.id) do
-    %p
+    %p.configBox
       プロフィール編集
   =link_to edit_address_path(current_user.id) do
-    %p
+    %p.configBox
       住所編集
   =link_to before_logout_users_path do
-    %p
+    %p.configBox
       ログアウト

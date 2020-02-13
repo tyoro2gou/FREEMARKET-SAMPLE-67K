@@ -19,7 +19,7 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to card_path([000], id: show)
       else
-        redirect_to card_path
+        redirect_to cards_path
       end
     end
   end

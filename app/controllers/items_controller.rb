@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to user_path(current_user.id)
     else
-      render :new
+      redirect_to new_item_path
     end
   end
   

@@ -54,11 +54,16 @@ class ItemsController < ApplicationController
 
 
   def before_buy
-    @image = Image.find_by(item_id: @item.id)
-    @address = Address.find_by(user_id: current_user.id)
-    @card = Card.find_by(user_id: current_user.id)
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    @card_information = customer.cards.retrieve(@card.card_id)
+    @user = User.find(current_user.id)
+    if @user.cards.exists?
+      @image = Image.find_by(item_id: @item.id)
+      @address = Address.find_by(user_id: current_user.id)
+      @card = Card.find_by(user_id: current_user.id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+    else
+      redirect_to new_card_path
+    end
   end
 
 

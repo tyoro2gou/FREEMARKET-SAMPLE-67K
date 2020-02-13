@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
   require 'payjp'
   before_action :move_to_top
   before_action :move_to_top, except: :show
-  before_action :set_item, only: [:before_buy, :pay]
-
-
-
+  before_action :set_item, only: [:before_buy, :pay, :edit, :update, :destroy]
+  
+  def index
+  end
+ 
   def new
     @item = Item.new
     @images = @item.images.build
@@ -21,6 +22,18 @@ class ItemsController < ApplicationController
       redirect_to user_path(current_user.id)
     else
       render :new
+    end
+  end
+  
+  def edit
+    @images = @item.images
+  end
+
+  def update
+    if @item.update(item_params_update)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
     end
   end
 
@@ -63,7 +76,13 @@ class ItemsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
-  
+  def destroy
+   if @item.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
 
   private
@@ -77,7 +96,13 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :text, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
+
+  def item_params_update
+    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id)
+  end
+
+
 end
 end

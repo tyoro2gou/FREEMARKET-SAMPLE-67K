@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+  require 'payjp'
+  before_action :move_to_top
   before_action :move_to_top, except: :show
-  before_action :set_item, only: [:before_buy, :buy]
+  before_action :set_item, only: [:before_buy, :pay, :edit, :update, :destroy]
   
   def index
   end
-
+ 
   def new
     @item = Item.new
     @images = @item.images.build
@@ -22,6 +24,18 @@ class ItemsController < ApplicationController
       redirect_to new_item_path
     end
   end
+  
+  def edit
+    @images = @item.images
+  end
+
+  def update
+    if @item.update(item_params_update)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
+  end
 
   def show
     @item = Item.includes(:saler).find(params[:id])
@@ -31,13 +45,11 @@ class ItemsController < ApplicationController
   def saling_show
     @user = User.find(current_user.id)
     @items = Item.where(saler_id: current_user.id, buyer_id: nil)
-    @images = Image.where(item_id: @items.ids)
   end
 
   def saled_show
     @user = User.find(current_user.id)
     @items = Item.where(buyer_id: current_user.id)
-    @images = Image.where(item_id: @items.ids)
   end
 
 
@@ -49,28 +61,48 @@ class ItemsController < ApplicationController
     @card_information = customer.cards.retrieve(@card.card_id)
   end
 
-  def buy
+
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+    amount: @item.price,
+    customer: card.customer_id,
+    card: params['payjp-token'],
+    currency:'jpy', 
+    )
     @item.buyer_id = current_user.id
-    if @item.save
-      redirect_to user_path
+    @item.save
+    redirect_to user_path(current_user.id)
+  end
+
+  def destroy
+   if @item.destroy
+      redirect_to root_path
     else
-      redirect_to item_path(@item.id)
+      render :edit
     end
   end
 
 
-
   private
-   def move_to_top
-     redirect_to root_path unless user_signed_in?
-   end
+
+  def move_to_top
+    redirect_to root_path unless user_signed_in?
+  end
 
   def set_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-
     params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
   end
+
+  def item_params_update
+    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id)
+  end
+
+
+end
 end

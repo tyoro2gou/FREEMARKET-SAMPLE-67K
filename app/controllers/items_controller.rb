@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+  require 'payjp'
+  before_action :move_to_top
   before_action :move_to_top, except: :show
-  before_action :set_item, only: [:before_buy, :buy, :edit, :update, :destroy]
+  before_action :set_item, only: [:before_buy, :pay, :edit, :update, :destroy]
   
   def index
   end
-
+ 
   def new
     @item = Item.new
     @images = @item.images.build
@@ -43,13 +45,11 @@ class ItemsController < ApplicationController
   def saling_show
     @user = User.find(current_user.id)
     @items = Item.where(saler_id: current_user.id, buyer_id: nil)
-    @images = Image.where(item_id: @items.ids)
   end
 
   def saled_show
     @user = User.find(current_user.id)
     @items = Item.where(buyer_id: current_user.id)
-    @images = Image.where(item_id: @items.ids)
   end
 
 
@@ -61,13 +61,19 @@ class ItemsController < ApplicationController
     @card_information = customer.cards.retrieve(@card.card_id)
   end
 
-  def buy
+
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+    amount: @item.price,
+    customer: card.customer_id,
+    card: params['payjp-token'],
+    currency:'jpy', 
+    )
     @item.buyer_id = current_user.id
-    if @item.save
-      redirect_to user_path
-    else
-      redirect_to item_path(@item.id)
-    end
+    @item.save
+    redirect_to user_path(current_user.id)
   end
 
   def destroy
@@ -79,11 +85,11 @@ class ItemsController < ApplicationController
   end
 
 
-
   private
-   def move_to_top
-     redirect_to root_path unless user_signed_in?
-   end
+
+  def move_to_top
+    redirect_to root_path unless user_signed_in?
+  end
 
   def set_item
     @item = Item.find(params[:id])
@@ -98,4 +104,5 @@ class ItemsController < ApplicationController
   end
 
 
+end
 end

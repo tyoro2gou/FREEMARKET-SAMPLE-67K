@@ -11,8 +11,8 @@
         = f.submit "コメントする",class: "commentbtn"
       .consoleBox
       - if @item.saler.id == current_user.id
-        .itemEdit-Purchase
-          = link_to edit_item_path(@item.id),class:"itemEdit-Purchase__btn"do
+        = link_to edit_item_path(@item.id),class:"itemEdit-Purchase__btn"do
+          .itemEdit-Purchase         
             編集する
       - else
         = link_to before_buy_item_path(@item.id) ,class:"itemEdit-Purchase__btn" do

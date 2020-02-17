@@ -3,12 +3,16 @@
   %header
     = link_to "#" do
       = image_tag "logo/logo.png", size: '185x49', class: "header__logo"
-
-
   .sale-form
     -# .contents__title
     -#   商品の情報を入力
     = form_for @item, url: items_path do |f|
+      - if @item.invalid?
+        .sale-form__errors
+          %h2= "#{@item.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @item.errors.full_messages.each do |message|
+              %li= message
       -# 野村さん担当エリア
       .sale-form__upload
         = f.label :image, class: "title" do

@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  validates :name, :description, :status_id, :postage_id, :region_id, :shipping_date_id, :price, presence: true 
+  validates :name, :description, :price, presence: true 
+  validates :status_id, inclusion: { in: %w(0), message: "を選択してください" }
+  validates :postage_id, inclusion: { in: %w(0), message: "を選択してください" }
+  validates :region_id, inclusion: { in: %w(0), message: "を選択してください" }
+  validates :shipping_date_id, inclusion: { in: %w(0), message: "を選択してください" }
   has_many :comments
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true

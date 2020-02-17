@@ -1,6 +1,7 @@
 class TopController < ApplicationController
   def index
     @items = Item.where(buyer_id: nil).order("created_at DESC").limit(3)
+    binding.pry
   end
 
   def new

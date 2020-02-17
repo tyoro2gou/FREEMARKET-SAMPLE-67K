@@ -1,0 +1,1 @@
+Image.create!(image: open("#{Rails.root}/db/koshiro_fixtures/lady-cloth1.jpg"), item_id: 1)

@@ -51,7 +51,8 @@
               = current_user.family_name
               = current_user.last_name
             = form_tag(action: :pay, method: :post,) do
-              .buttons 購入する
+              %button
+                .buttons 購入する
             
 
   %footer.single-footer

@@ -102,3 +102,5 @@ gem 'ancestry'
 
 
 # gem 'jquery-turbolinks'
+
+gem 'rails-i18n'

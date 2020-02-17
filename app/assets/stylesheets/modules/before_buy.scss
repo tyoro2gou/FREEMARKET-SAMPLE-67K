@@ -81,14 +81,11 @@
     }
 
   }
-  .buttons{
+  button {
     @include buttons($white);
     background-color: $mainBlue;
     width: 343px;
     align-items: center;
-    position: absolute;
-    left: 39%;
-    bottom: 10%;
   }
   
 }

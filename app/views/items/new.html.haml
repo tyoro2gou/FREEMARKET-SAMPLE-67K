@@ -7,6 +7,12 @@
     -# .contents__title
     -#   商品の情報を入力
     = form_for @item, url: items_path do |f|
+      - if @item.errors.any?
+        .sale-form__errors
+          %h2= "#{@item.errors.full_messages.count}件のエラーが発生しました。"
+          %ul
+            - @item.errors.full_messages.each do |message|
+              %li= message
       -# 野村さん担当エリア
       .sale-form__upload
         = f.label :image, class: "title" do
@@ -24,6 +30,7 @@
               %script{:src => "item_new.js", :type => "text/javascript"}
               = f.fields_for :images do |i|
                 = i.file_field :image, class: "hidden-field"
+                = i.hidden_field :image_cache 
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
                 %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }

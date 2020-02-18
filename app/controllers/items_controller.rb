@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to user_path(current_user.id)
     else
-      redirect_to new_item_path
+      render new_item_path
     end
   end
   
@@ -101,7 +101,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:name, :description, :category_id, :status_id, :postage_id, :region_id, :shipping_date_id, :price, images_attributes: [:image, :image_cache ]).merge(saler_id: current_user.id)
   end
 
   def item_params_update

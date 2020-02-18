@@ -19,13 +19,14 @@
           ブランド
       -if @path.is('top#index')
         %ul.sideHeader__right
-          %li.sideHeader__right--log
-            -if user_signed_in?
+          -if user_signed_in?
+            %li.sideHeader__right--log
               = link_to user_path(current_user.id) ,class: 'login-btn' do
                 マイページ
-            -else
+          -else
+            %li.sideHeader__right--log
               = link_to new_user_session_path ,class: 'login-btn' do
                 ログイン
-          %li.sideHeader__right--new
-            = link_to new_user_registration_path ,class: 'new-btn' do
-              新規会員登録
+            %li.sideHeader__right--new
+              = link_to new_user_registration_path ,class: 'new-btn' do
+                新規会員登録

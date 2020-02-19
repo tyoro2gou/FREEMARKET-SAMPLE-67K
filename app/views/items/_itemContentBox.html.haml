@@ -14,7 +14,7 @@
         = link_to edit_item_path(@item.id),class:"itemEdit-Purchase__btn"do
           .itemEdit-Purchase         
             編集する
-      - if @item.buyer_id == nil
+      - elsif @item.buyer_id == nil
         = link_to before_buy_item_path(@item.id) ,class:"itemEdit-Purchase__btn" do
           .itemEdit-Purchase
             購入する

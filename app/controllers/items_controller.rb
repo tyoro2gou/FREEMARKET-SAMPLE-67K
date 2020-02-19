@@ -27,6 +27,9 @@ class ItemsController < ApplicationController
   
   def edit
     @images = @item.images
+    # binding.pry
+    @selected_parent_category = Category.find(@item.category.ancestry)
+    @selected_child_category = Category.find(@item.category.id)
   end
 
   def update

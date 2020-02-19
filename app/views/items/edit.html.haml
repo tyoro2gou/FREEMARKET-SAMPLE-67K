@@ -67,7 +67,9 @@
               カテゴリー
               %span
                 必須
-            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {selected: @selected_parent_category.id}
+            = f.collection_select :category_id, Category.where(ancestry: @selected_parent_category.id), :id, :name, {selected: @selected_child_category.id}, {id: "selected_child_category"}
+            -# = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name
           = f.label :status_id, class: "title" do
             商品の状態
             %span

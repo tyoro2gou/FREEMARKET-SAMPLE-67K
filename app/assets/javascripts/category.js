@@ -25,6 +25,7 @@ $(function(){
       })
       .done(function(children){
         $('#child_category').remove(); //親が変更された時、子を削除
+        $('#selected_child_category').remove();
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -36,6 +37,7 @@ $(function(){
       })
     }else{
       $('#child_category').remove(); //親カテゴリーが初期値になった時、子を削除
+      $('#selected_child_category').remove();
     }
   });
 });
